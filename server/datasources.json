@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+	"connector": "memory",
+	"file":"db.json"
+  },
+  "qcd480d03JDE": {
+    "host": "qcd480d03",
+    "port": 1433,
+    "database": "JDE",
+    "password": "biuser",
+    "name": "qcd480d03JDE",
+    "connector": "mssql",
+    "user": "bi-user"
+  }
+}

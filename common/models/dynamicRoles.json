@@ -1,0 +1,6 @@
+{
+	"accessType": "*",
+	"principalType": "ROLE",
+	"principalId": "ITmember",
+	"permission": "ALLOW"
+}

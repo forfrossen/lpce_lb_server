@@ -1,0 +1,44 @@
+module.exports = function(app) {
+	const User = app.models.User;
+	
+	User.beforeRemote( 'login', function( ctx, next) {
+		console.log( '\n\n\nbefore  user login function\n\n\n' );
+		return;
+	} );
+
+	User.afterRemote( 'login', function( ctx, next) {
+		console.log( '\n\n\nafter user login function\n\n\n' );
+		return;
+	} );
+	
+	User.remoteMethod( 'login', {
+		'accepts': [
+			{
+				'arg': 'credentials',
+				'type': 'object',
+				'description': 'Login credentials',
+				'required': false,
+				'http': {
+					'source': 'body'
+				}
+			},
+			{
+				'arg': 'include',
+				'type': 'string',
+				'description': 'Related objects to include in the response. See the description of return value for more details.',
+				'http': {
+					'source': 'query'
+				}
+			}
+		],
+			'returns': [
+				{
+					'arg': 'token',
+					'type': 'object',
+					'root': true
+				}
+			]
+	})
+	
+  };
+  

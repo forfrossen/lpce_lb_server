@@ -1,0 +1,190 @@
+{
+	"name": "TeileinfoNeu",
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "Teileinfo-neu"
+		},
+		"relations": {}
+	},
+	"properties": {
+		"id": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 10,
+			"scale": 0,
+			"id": 1,
+			"mssql": {
+				"columnName": "ID",
+				"dataType": "int",
+				"dataLength": null,
+				"dataPrecision": 10,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"zeichnungsnummer": {
+			"type": "String",
+			"required": false,
+			"length": 6,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Zeichnungsnummer",
+				"dataType": "varchar",
+				"dataLength": 6,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"teileinfoAllg": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Teileinfo_allg",
+				"dataType": "varchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"dateAllg": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "date_allg",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"teileinfoSek": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Teileinfo_SEK",
+				"dataType": "varchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"dateSek": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "date_sek",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"litm": {
+			"type": "String",
+			"required": false,
+			"length": 25,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "LITM",
+				"dataType": "varchar",
+				"dataLength": 25,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"modified": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Modified",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"created": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Created",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"created by": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Created By",
+				"dataType": "varchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	},
+	"acls": [
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "ITmember",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "$authenticated",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "WebAppReader",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "WRITE",
+			"principalType": "ROLE",
+			"principalId": "WebAppWriter",
+			"permission": "ALLOW"
+		}
+	]
+}

@@ -1,0 +1,70 @@
+{
+	"name": "Heimarbeiter",
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "Mitarbeiter"
+		},
+		"relations": {}
+	},
+	"properties": {
+		"id": false,
+		"kostenstelle": {
+			"type": "String",
+			"required": false,
+			"length": 8,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Kostenstelle",
+				"dataType": "varchar",
+				"dataLength": 8,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"name": {
+			"type": "String",
+			"required": false,
+			"length": 50,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Name",
+				"dataType": "nvarchar",
+				"dataLength": 50,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	},
+	"acls": [
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "ITmember",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "$authenticated",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "WebAppReader",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "WRITE",
+			"principalType": "ROLE",
+			"principalId": "WebAppWriter",
+			"permission": "ALLOW"
+		}
+	]
+}

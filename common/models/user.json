@@ -1,0 +1,83 @@
+{
+	"name": "user",
+	"plural": "users",
+	"base": "User",
+	"relations": {
+		"accessTokens": {
+			"type": "hasMany",
+			"model": "accessToken",
+			"polymorphic": {
+				"foreignKey": "userId",
+				"discriminator": "principalType"
+			},
+			"options": {
+				"disableInclude": true
+			}
+		},
+		"identities": {
+			"type": "hasMany",
+			"model": "userIdentity",
+			"foreignKey": "userId"
+		},
+		"credentials": {
+			"type": "hasMany",
+			"model": "userCredential",
+			"foreignKey": "userId"
+		}
+	},
+	"validations": [],
+	"acls": [
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "ITmember",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "DENY"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW",
+			"property": "create"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$owner",
+			"permission": "ALLOW",
+			"property": "deleteById"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW",
+			"property": "login"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW",
+			"property": "logout"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$owner",
+			"permission": "ALLOW",
+			"property": "findById"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$owner",
+			"permission": "ALLOW",
+			"property": "updateAttributes"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW",
+			"property": "confirm"
+		  }, {
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW",
+			"property": "resetPassword",
+			"accessType": "EXECUTE"
+		  }],
+	"methods": []
+}

@@ -1,0 +1,18 @@
+[Unit]
+Description=Loopback API - Nodejs Rest API
+
+[Service]
+ExecStart=/var/www/node/loopbak/server/server.js
+Restart=always
+User=markus
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=markus
+# Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=development
+WorkingDirectory=/var/www/node/loopbak/
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=loopback_api
+
+[Install]
+WantedBy=multi-user.target
