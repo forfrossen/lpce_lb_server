@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
-    "dev:server": "nodemon --ignore db.json server/server.js --watch",
+    "dev:server": "NODE_ENV=DEV nodemon --ignore db.json server/server.js --watch",
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk"
   },
   "dependencies": {
@@ -32,8 +32,9 @@
     "loopback-component-passport": "^3.10.0",
     "loopback-connector-ldap": "^2.0.27",
     "loopback-connector-mssql": "^3.3.0",
+    "loopback-context": "^3.3.0",
     "negokerbadauth": "1.0.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.6",
     "passport": "^0.4.0",
     "passport-activedirectory": "^1.0.4",
     "passport-jwt": "^4.0.0",
