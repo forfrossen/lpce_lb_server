@@ -9,15 +9,13 @@
       "type": "belongsTo",
       "model": "user",
       "foreignKey": "userId"
-    }
+	}
   },
-  "acls": [
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    }
-  ],
-  "methods": {}
+  "acls": [{
+	"accessType": "READ",
+	"principalType": "ROLE",
+	"principalId": "$everyone",
+	"permission": "ALLOW"
+	}],
+  "methods": []
 }

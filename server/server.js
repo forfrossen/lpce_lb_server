@@ -20,20 +20,19 @@ app.set( 'trust proxy', [ 'loopback', '172.18.104.0/23' ] );
 //var FileStore = require('session-file-store')(session);
 //var dataSource = app.dataSources.qcd480JDE;
 
-/*
+
 app.use(errorHandler({
 	debug: app.get('env') === 'development',
 	log: true,
   }));
-*/
+
 // boot scripts mount components like REST API
 //boot( app, __dirname );
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot( app, __dirname, function ( err ) {
-	if (err) throw err;
-
+	if ( err ) throw err;
 
 	// start the server if `$ node server.js`
 	if ( require.main === module )
@@ -51,14 +50,12 @@ app.middleware( 'initial', ( req, res, User ) => {
 })
 */		
 
-
 app.middleware( 'initial:before', loopback.token( { model: app.models.accessToken } ) );
 
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
 
 app.middleware( 'auth', loopback.token( { model: app.models.accessToken } ) );
-
 
 /*
 app.middleware( 'session:before', cookieParser( process.env.JWT_SECRET ) );
@@ -102,6 +99,8 @@ app.middleware('routes:after', function ( req, res, next ) {
 } );
 */
 
+
+
 // We need flash messages to see passport errors
 app.use( flash() );
 
@@ -112,32 +111,9 @@ app.start = function () {
 		var baseUrl = app.get( 'url' ).replace( /\/$/, '' );
 		console.log( 'Web server listening at: %s', baseUrl );
 		if ( app.get( 'loopback-component-explorer' ) ) {
-			console.log( '\n\nServer running in mode: %O', process.env.NODE_ENV );
 			var explorerPath = app.get( 'loopback-component-explorer' ).mountPath;
 			console.log( 'Browse your REST API at %s%s', baseUrl, explorerPath );
 		}
 	} );
 };
 
-module.exports.models = app.models;
-/*
-app.get('remoting').errorHandler = {
-	handler: function(err, req, res, defaultHandler) {
-	  err = app.buildError(err);
-  
-	  // send the error back to the original handler
-	  defaultHandler(err);
-	},
-	disableStackTrace: true
-  };
-  
-  app.buildError = function(err) {
-	err.message = 'Custom message: ' + err.message;
-	err.status = 408; // override the status
-  
-	// remove the statusCode property
-	delete err.statusCode;
-  
-	return err;
-  };
-*/

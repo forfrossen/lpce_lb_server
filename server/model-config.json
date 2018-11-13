@@ -20,7 +20,7 @@
   },
   "accessToken": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "userCredential": {
     "dataSource": "db",
@@ -50,10 +50,6 @@
     "public": true
   },
   "Heimarbeiter": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "Heimarbeit": {
     "dataSource": "qcd480d03JDE",
     "public": true
   }

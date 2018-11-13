@@ -23,18 +23,18 @@ async function discover() {
   const options = {relations: true};
 
   // Discover models and relations
-  const dboSchema = await db.discoverSchemas('heimarbeit', options);
+  const dboSchema = await db.discoverSchemas('Mitarbeiter', options);
   
   console.log(dboSchema);
   
   // Create model definition files
-  await writeFile('common/models/heimarbeit.json', JSON.stringify(dboSchema['dbo.heimarbeit'], null, 2));
+  await writeFile('common/models/Mitarbeiter.json', JSON.stringify(dboSchema['dbo.Mitarbeiter'], null, 2));
 
   // Expose models via REST API
   const configJson = await readFile('server/model-config.json', 'utf-8');
   console.log('MODEL CONFIG', configJson);
   const config = JSON.parse(configJson);
-  config.heimarbeit = {dataSource: DATASOURCE_NAME, public: true};
+  config.Mitarbeiter = {dataSource: DATASOURCE_NAME, public: true};
   await writeFile(
     'server/model-config.json',
     JSON.stringify(config, null, 2)

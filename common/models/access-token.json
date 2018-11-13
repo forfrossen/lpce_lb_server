@@ -6,7 +6,7 @@
   "validations": [],
   "relations": {
     "user": {
-      "type": "belongsTo",
+    "type": "belongsTo",
       "idName": "id",
       "polymorphic": {
         "idType": "string",
@@ -16,5 +16,5 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": []
 }

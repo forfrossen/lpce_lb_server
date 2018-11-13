@@ -1,11 +1,6 @@
 {
-  "accessType": "*",
-  "principalType": "ROLE",
-  "principalId": "ITmember",
-  "permission": "ALLOW",
-  "properties": {},
-  "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": {}
+	"accessType": "*",
+	"principalType": "ROLE",
+	"principalId": "ITmember",
+	"permission": "ALLOW"
 }
