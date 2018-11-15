@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
-    "dev:server": "NODE_ENV=DEV nodemon --ignore db.json server/server.js --watch",
-    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk"
+    "dev:server": "NODE_ENV=DEV nodemon --ignore db.json --ignore client/dist server/server.js --watch",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk -d ng2web -i  disabled"
   },
   "dependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",
