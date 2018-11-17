@@ -1,5 +1,5 @@
 var LoopBackContext = require( 'loopback-context' );
-
+const debugTeileinfo = false;
 module.exports = function ( TeileinfoNeu ) {
 
 	TeileinfoNeu.validatesPresenceOf( 'zeichnungsnummer', 'litm', 'teileinfoAllg' );
@@ -18,21 +18,22 @@ module.exports = function ( TeileinfoNeu ) {
 
 		const modelName = ctx.Model.modelName;
 		const scope = ctx.where ? JSON.stringify(ctx.where) : '<all records>';
-		console.log( '%s: %s accessed %s: %s', new Date(), user, modelName, scope );
+		if ( debugTeileinfo ) console.log( '%s: %s accessed %s: %s', new Date(), user, modelName, scope );
+		
 
 		
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' );
 		
 		if ( currentUser ) {
-			console.log( 'currentUser: %O', currentUser ); // voila!
+			if ( debugTeileinfo ) console.log( 'currentUser: %O', currentUser ); // voila!
 		}
 
 		return next();
  	});
 	
 	TeileinfoNeu.beforeRemote( '**', function ( ctx, user, next ) {
-		console.log( ctx.methodString, 'was invoked remotely '); // customers.prototype.save was invoked remotely
+		if ( debugTeileinfo ) console.log( ctx.methodString, 'was invoked remotely '); // customers.prototype.save was invoked remotely
 		return next();
 	});
 
@@ -40,6 +41,8 @@ module.exports = function ( TeileinfoNeu ) {
 	TeileinfoNeu.observe( 'before save', function ( ctx, next  ) {
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' );
+
+		if ( debugTeileinfo ) console.log( 'About to save following insance: %O', ctx.instance );
 
 		// Null the fields if they are ''
 		ctx.instance.dateAllg = ( ctx.instance.dateAllg === '' ) ? null : ctx.instance.dateAllg;
@@ -52,8 +55,6 @@ module.exports = function ( TeileinfoNeu ) {
 			// Set created date an created by for new records
 			ctx.instance.created = new Date();
 			ctx.instance[ 'created by' ] = currentUser;
-			
-
 
 			// If dateAllg is empty but teileinfoAllg is not, set dateAllg to now
 			if ( ctx.instance[ 'dateAllg' ] === '' || ctx.instance[ 'dateAllg' ] === null )
@@ -77,9 +78,9 @@ module.exports = function ( TeileinfoNeu ) {
 
 		//if ( ctx.instance.dateAllg )
 			
-			console.log( 'DateAllg: ' + ctx.instance.dateAllg );
+		if ( debugTeileinfo ) console.log( 'DateAllg: ' + ctx.instance.dateAllg );
 
-		console.log( '\n> before save triggered:', ctx.Model.modelName, ctx.instance || ctx.data );
+		if ( debugTeileinfo ) console.log( '\n> before save triggered:', ctx.Model.modelName, ctx.instance || ctx.data );
 		return next();
 	} );
 
@@ -87,15 +88,15 @@ module.exports = function ( TeileinfoNeu ) {
 	// model operation hook
 	TeileinfoNeu.observe( 'before save', function ( ctx, next ) {
 		if ( ctx.instance ) {
-			console.log( '\n\nAbout to save a TeileinfoNeu instance:', ctx.instance );
+			if ( debugTeileinfo ) console.log( '\n\nAbout to save a TeileinfoNeu instance:', ctx.instance );
 		} else {
-			console.log( '\n\nAbout to update TeileinfoNeu that match the query %j:', ctx.where );
+			if ( debugTeileinfo ) console.log( '\n\nAbout to update TeileinfoNeu that match the query %j:', ctx.where );
 		}
 		return next();
 	} );
 
 	TeileinfoNeu.observe( 'after save', function ( ctx, next ) {
-		console.log( '\n> after save triggered:', ctx.Model.modelName, ctx.instance );
+		if ( debugTeileinfo ) console.log( '\n> after save triggered:', ctx.Model.modelName, ctx.instance );
 		return next();
 	} );
 };

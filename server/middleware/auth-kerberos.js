@@ -36,7 +36,7 @@ module.exports = function () {
 				kerbAuthNeeded = false;
 				return next();
 			}
-			console.log('req.path.includes(assets): ' + req.path.includes('assets'))
+			//console.log('req.path.includes(assets): ' + req.path.includes('assets'))
 			// If request is for static file from the  client directory, skip authentification
 			if ( req.path.includes('assets')) {
 				kerbAuthNeeded = false;
