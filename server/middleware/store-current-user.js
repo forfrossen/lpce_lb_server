@@ -1,49 +1,26 @@
-var loopback = require('loopback');
-
-module.exports = function () {  
-	return function ( req, res, next ) {
-		return next();
+module.exports = function (options) {
+	return function storeCurrentUser( req, res, next ) {
 		
-		var tokenId = false;
-		if (req.query && req.query.access_token) {
-			tokenId = req.query.access_token;
-		}
-		// @TODO - not sure if this is correct since I'm currently not using headers
-		// to pass the access token
-		else if (req.headers && req.headers.access_token) {
-			tokenId = req.headers.access_token
+		if ( !req.accessToken ) {
+			return next();
 		}
 
+		var app = require('../server');
+		var UserIdentity = app.models.UserIdentity;
+        var loopbackContext = require('loopback-context').getCurrentContext();
 
-		if ( tokenId ) {
-			console.log('No access token in req: %O')
-            return next();
-		} else {
-			console.log( 'Acces Token from req: %O', req.accessToken );
-		}
+		UserIdentity.findOne( {
+			where: {
+				provider: 'ad',
+				userId: req.accessToken.userId,
+			}
+		}, function ( err, identity ) {
+			if ( err ) return next( err );
+			if ( !identity ) return next( new Error( 'No user with this access token was found.' ) );
+			
+			loopbackContext.set( 'currentUser', identity.externalId );
 
-        req.app.models.MyUser.findById(req.accessToken.userId, function (err, user) {
-
-            if (err) {
-                return next(err);
-            }
-
-            if (!user) {
-                //user not found for accessToken, which is odd.
-                return next();
-            }
-
-            req.app.models.Role.getRoles({
-                principalType: req.app.models.RoleMapping.USER,
-                principalId: user.id
-            }, function (err, roles) {
-
-                var reqContext = req.getCurrentContext();
-                reqContext.set('currentUser', user);
-                reqContext.set('ip', req.ip);
-                reqContext.set('currentUserRoles', roles);
-                next();
-            });
-        });
-    };
+			next();
+		} );
+	};
 };

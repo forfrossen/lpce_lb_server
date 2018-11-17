@@ -3,7 +3,7 @@
 require('cls-hooked');
 process.env.JWT_SECRET = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
 process.env.cookieSecret = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
-process.env.DEBUG = 'loopback:user,loopback:security:*';
+//process.env.DEBUG = 'loopback:user,loopback:security:*';
 //process.env.DEBUG = '*';
 
 var loopback = require( 'loopback' );
@@ -119,7 +119,7 @@ app.start = function () {
 	} );
 };
 
-module.exports.models = app.models;
+//module.exports.models = app.models;
 /*
 app.get('remoting').errorHandler = {
 	handler: function(err, req, res, defaultHandler) {
