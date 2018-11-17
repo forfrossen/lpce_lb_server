@@ -1,28 +1,27 @@
 module.exports = {
 	apps: [ {
 
-		script: 'server/server.js',
-		args: '',
+		name					: 'LPCE WebApps - Development',	
+		cwd						: '/var/www/node/develop/lpce-webapps/server',
+		args					: '',
+		script					: 'server.js',
 
-		out_file: `log/debug.log`,
-		error_file: `log/error.log`,
-		log_date_format: 'YYYY-MM-DD HH:mm:ss: Z',
-		append_env_to_name: true,
+		out_file				: `log/debug.log`,
+		error_file				: `log/error.log`,
+		log_date_format			: 'YYYY-MM-DD HH:mm:ss: Z',
 
-		instances: 1,
-		autorestart: true,
-		watch: false,
-		max_memory_restart: '1G',
+		instances				: 1,
+		max_restarts   			: 10,
+		min_uptime				: '10s',
+		autorestart				: false,
+		watch					: false,
+		ignore_watch 			: ["[\\/\\\\]\\./", "node_modules", "db.json", "client", "logs"],
+		max_memory_restart		: '1G',
 
-		env_dev: {
-			name: 'LPCE WebApps - Development',
-			cwd: '/var/www/node/develop/lpce-webapps/',
-			NODE_ENV: "development",
+		env: {
+			NODE_ENV			: "development",
 		},
-		env_production: {
-			NODE_ENV: "production",
-		}
-	} ],
+	}],
 
 	deploy: {
 		production: {

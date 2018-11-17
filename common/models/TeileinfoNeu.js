@@ -11,6 +11,7 @@ module.exports = function ( TeileinfoNeu ) {
 
 
 	TeileinfoNeu.observe('access', function(ctx, next) {
+		/*
 		const token = ctx.options && ctx.options.accessToken;
 		const userId = token && token.userId;
 		const user = userId ? 'user#' + userId : '<anonymous>';
@@ -21,9 +22,15 @@ module.exports = function ( TeileinfoNeu ) {
 
 		
 		var lbctx = LoopBackContext.getCurrentContext();
-		var currentUser = lbctx && lbctx.get('currentUser');
-		console.log('currentUser.username: ', currentUser.username); // voila!
-
+		var currentUser = lbctx && lbctx.get( 'currentUser' );
+		
+		if ( currentUser )
+			console.log( 'currentUser.username: ', currentUser.username ); // voila!
+			else 
+			console.log( 'lbctx: %O', lbctx ); // voila!
+			*/
+		
+		console.log( 'currentUser.username: ', ctx.args.options.currentUser ); // voila!
 
 		return next();
  	});

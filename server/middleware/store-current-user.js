@@ -1,9 +1,22 @@
 var loopback = require('loopback');
-/*
+
 module.exports = function () {  
-    return function (req, res, next) {
-		if ( !req.accessToken ) {
-			console.log('No access token in req')
+	return function ( req, res, next ) {
+		return next();
+		
+		var tokenId = false;
+		if (req.query && req.query.access_token) {
+			tokenId = req.query.access_token;
+		}
+		// @TODO - not sure if this is correct since I'm currently not using headers
+		// to pass the access token
+		else if (req.headers && req.headers.access_token) {
+			tokenId = req.headers.access_token
+		}
+
+
+		if ( tokenId ) {
+			console.log('No access token in req: %O')
             return next();
 		} else {
 			console.log( 'Acces Token from req: %O', req.accessToken );
@@ -33,4 +46,4 @@ module.exports = function () {
             });
         });
     };
-};*/
+};

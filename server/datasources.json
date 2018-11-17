@@ -11,6 +11,9 @@
     "password": "biuser",
     "name": "qcd480d03JDE",
     "connector": "mssql",
-    "user": "bi-user"
+	"user": "bi-user",
+	"options": {
+		"encrypt": false
+	}
   }
 }

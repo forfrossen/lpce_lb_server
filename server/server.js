@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-
+require('cls-hooked');
 process.env.JWT_SECRET = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
 process.env.cookieSecret = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
-//process.env.DEBUG = 'loopback:user,loopback:security:*';
+process.env.DEBUG = 'loopback:user,loopback:security:*';
 //process.env.DEBUG = '*';
 
 var loopback = require( 'loopback' );
@@ -57,7 +57,7 @@ app.middleware( 'initial:before', loopback.token( { model: app.models.accessToke
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
 
-app.middleware( 'auth', loopback.token( { model: app.models.accessToken } ) );
+//app.middleware( 'auth', loopback.token( { model: app.models.accessToken } ) );
 
 
 /*

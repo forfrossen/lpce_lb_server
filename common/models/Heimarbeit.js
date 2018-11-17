@@ -21,7 +21,7 @@ module.exports = function ( Heimarbeit ) {
 		
 		return next();
 	} );
-
+/*
 	Heimarbeit.observe( 'after save', function ( ctx, next ) {
 		console.log( '\n> after save triggered:', ctx.Model.modelName, ctx.instance );
 		return next();
@@ -36,4 +36,5 @@ module.exports = function ( Heimarbeit ) {
 		}
 		next();
 	} );
+*/
 };
