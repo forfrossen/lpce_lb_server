@@ -6,6 +6,7 @@ process.env.cookieSecret = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
 //process.env.DEBUG = 'loopback:user,loopback:security:*';
 //process.env.DEBUG = '*';
 
+
 var loopback = require( 'loopback' );
 var boot = require( 'loopback-boot' );
 var bodyParser = require( 'body-parser' );
@@ -26,8 +27,6 @@ app.use(errorHandler({
 	log: true,
   }));
 */
-// boot scripts mount components like REST API
-//boot( app, __dirname );
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
@@ -50,10 +49,14 @@ app.middleware( 'initial', ( req, res, User ) => {
 	}
 })
 */		
-
-
+/*
+app.middleware('initial:before', (req, res, next) => {
+	console.time( 'Call Time' );
+	
+	return next();
+} )
+*/
 app.middleware( 'initial:before', loopback.token( { model: app.models.accessToken } ) );
-
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
 
@@ -85,13 +88,13 @@ app.middleware('initial:after', function ( req, res, next ) {
 	//console.log( 'Req.headers: ', req.headers );
 	//console.log( 'Session: %O', req.session );
 	console.log( 'Token : %O', req.accessToken );
-	//console.log( 'Reqest Method: ' + req.method + ' - Request Url: ' + req.url );
+	console.log( 'Reqest Method: ' + req.method + ' - Request Url: ' + req.url );
 	//console.log( 'Reqest Cookies: %O', req.cookies );
 	//console.log( 'Reqest signedCookies: %O', req.signedCookies );
 	//console.log( 'User from Session: ', req.session.authenticatedPrincipal );
 	console.log( '===========================================================================\n\n\n' );
 	return next();
-} );
+} );/*
 app.middleware('routes:after', function ( req, res, next ) {
 
 	console.log( '===========================================================================' );
@@ -100,8 +103,15 @@ app.middleware('routes:after', function ( req, res, next ) {
 	return next();
 
 } );
-*/
+*//*
+app.use ( (req, res, next ) => {
 
+	console.log( 'Reqest Method: ' + req.method + ' - Request Url: ' + req.url );
+	//console.timeEnd( 'Call Time' );
+	
+	return next();
+} )
+*/
 // We need flash messages to see passport errors
 app.use( flash() );
 
@@ -114,30 +124,9 @@ app.start = function () {
 		if ( app.get( 'loopback-component-explorer' ) ) {
 			console.log( '\n\nServer running in mode: %O', process.env.NODE_ENV );
 			var explorerPath = app.get( 'loopback-component-explorer' ).mountPath;
-			console.log( 'Browse your REST API at %s%s', baseUrl, explorerPath );
+			console.log( 'Browse your REST API at %s%s\n', baseUrl, explorerPath );
+			console.log( '=====================================================================');
+			console.log( '\n\n\n');
 		}
 	} );
 };
-
-//module.exports.models = app.models;
-/*
-app.get('remoting').errorHandler = {
-	handler: function(err, req, res, defaultHandler) {
-	  err = app.buildError(err);
-  
-	  // send the error back to the original handler
-	  defaultHandler(err);
-	},
-	disableStackTrace: true
-  };
-  
-  app.buildError = function(err) {
-	err.message = 'Custom message: ' + err.message;
-	err.status = 408; // override the status
-  
-	// remove the statusCode property
-	delete err.statusCode;
-  
-	return err;
-  };
-*/

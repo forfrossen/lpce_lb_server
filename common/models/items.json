@@ -1,0 +1,1904 @@
+{
+  "name": "Items",
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "items"
+    },
+    "relations": {}
+  },
+  "properties": {
+	"id": false,
+    "iblitm": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBLITM",
+        "dataType": "nvarchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imaitm": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMAITM",
+        "dataType": "nvarchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imdsc1": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMDSC1",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imdsc2": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMDSC2",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imsrtx": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMSRTX",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibitm": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBITM",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmcu": {
+      "type": "String",
+      "required": false,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMCU",
+        "dataType": "nvarchar",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibmcu01": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMCU01",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp1": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP1",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp2": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP2",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp3": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP3",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp4": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP4",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp5": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP5",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp6": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP6",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp7": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP7",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp8": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP8",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp9": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP9",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibsrp0": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRP0",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp1": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP1",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp2": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP2",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp3": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP3",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp4": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP4",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp5": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP5",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp6": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP6",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp7": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP7",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp8": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP8",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp9": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP9",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprp0": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRP0",
+        "dataType": "nvarchar",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibcdcd": {
+      "type": "String",
+      "required": false,
+      "length": 15,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBCDCD",
+        "dataType": "nvarchar",
+        "dataLength": 15,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibpdgr": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPDGR",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibdsgp": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBDSGP",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibvend": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBVEND",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibvend01": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBVEND01",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibanpl": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBANPL",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibanpl01": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBANPL01",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibbuyr": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBBUYR",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibbuyr01": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBBUYR01",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibglpt": {
+      "type": "String",
+      "required": false,
+      "length": 4,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBGLPT",
+        "dataType": "nvarchar",
+        "dataLength": 4,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "iborig": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBORIG",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibropi": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBROPI",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibroqi": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBROQI",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibrqmx": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBRQMX",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibrqmn": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBRQMN",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibwomo": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBWOMO",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibserv": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBSERV",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibsafe": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBSAFE",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibsld": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 6,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBSLD",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 6,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibfrmp": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBFRMP",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibthrp": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 7,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBTHRP",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 7,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibcoty": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBCOTY",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibprgr": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBPRGR",
+        "dataType": "nvarchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibrprc": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBRPRC",
+        "dataType": "nvarchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "iborpr": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBORPR",
+        "dataType": "nvarchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibback": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBBACK",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibifla": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBIFLA",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibtfla": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBTFLA",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibabcs": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBABCS",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibabcm": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBABCM",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibabci": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBABCI",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibovr": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBOVR",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibshcm": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSHCM",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibcars": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBCARS",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibcarp": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBCARP",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibshcn": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSHCN",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibstkt": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSTKT",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "iblnty": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBLNTY",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibfifo": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBFIFO",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibcycl": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBCYCL",
+        "dataType": "nvarchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibinmg": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBINMG",
+        "dataType": "nvarchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibmpst": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMPST",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibupc": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBUPC",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibltlv": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBLTLV",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibltmf": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBLTMF",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibltcm": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBLTCM",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibopc": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBOPC",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibopv": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBOPV",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibacq": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBACQ",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibmlq": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBMLQ",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibltpu": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 2,
+      "mssql": {
+        "columnName": "IBLTPU",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "ibmpsp": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMPSP",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibmrpp": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMRPP",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibitc": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBITC",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibeco": {
+      "type": "String",
+      "required": false,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBECO",
+        "dataType": "nvarchar",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibecty": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBECTY",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibecod": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBECOD",
+        "dataType": "nvarchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibmtf1": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBMTF1",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmtf2": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBMTF2",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmtf3": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBMTF3",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmtf4": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBMTF4",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmovd": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 2,
+      "mssql": {
+        "columnName": "IBMOVD",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "ibqued": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 2,
+      "mssql": {
+        "columnName": "IBQUED",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "ibsetl": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 2,
+      "mssql": {
+        "columnName": "IBSETL",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "ibsrnk": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 2,
+      "mssql": {
+        "columnName": "IBSRNK",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "ibsrkf": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBSRKF",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibtimb": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBTIMB",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibbqty": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBBQTY",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibmult": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 3,
+      "mssql": {
+        "columnName": "IBMULT",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 3,
+        "nullable": "YES"
+      }
+    },
+    "ibsflt": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBSFLT",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibmake": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBMAKE",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibllx": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBLLX",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibcmgl": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBCMGL",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imdraw": {
+      "type": "String",
+      "required": false,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMDRAW",
+        "dataType": "nvarchar",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imrvno": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMRVNO",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imdsze": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMDSZE",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom1": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM1",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom2": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM2",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom3": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM3",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom4": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM4",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom6": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM6",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom8": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM8",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuom9": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUOM9",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuwum": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUWUM",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imuvm1": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMUVM1",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imifla": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMIFLA",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imtfla": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMTFLA",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "t2ky": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "T2KY",
+        "dataType": "nvarchar",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ibcb07": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBCB07",
+        "dataType": "nchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "councs": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 4,
+      "mssql": {
+        "columnName": "COUNCS",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 4,
+        "nullable": "YES"
+      }
+    },
+    "verweisapl": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "verweisapl",
+        "dataType": "nvarchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ivcitm": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ivcitm",
+        "dataType": "char",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imssc1d": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMSSC1D",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imssc2d": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMSSC2D",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "imdsc2d": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IMDSC2D",
+        "dataType": "char",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "umconv": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 7,
+      "mssql": {
+        "columnName": "UMCONV",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 7,
+        "nullable": "YES"
+      }
+    },
+    "ibvendl": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "IBVENDL",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "ibeao": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "IBEAO",
+        "dataType": "nvarchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

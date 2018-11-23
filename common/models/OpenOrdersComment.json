@@ -1,0 +1,104 @@
+{
+  "name": "OpenOrdersComment",
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "F4311OpenComment"
+    },
+    "relations": {}
+  },
+  "properties": {
+	"id": false,
+    "pddoco": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pddoco",
+        "dataType": "numeric",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "pdlnid": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 2,
+      "scale": 0,
+      "mssql": {
+        "columnName": "pdlnid",
+        "dataType": "numeric",
+        "dataLength": null,
+        "dataPrecision": 2,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "comment": {
+      "type": "String",
+      "required": false,
+      "length": 2147483647,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "comment",
+        "dataType": "text",
+        "dataLength": 2147483647,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "version": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mssql": {
+        "columnName": "version",
+        "dataType": "numeric",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "created": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "created",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "createdby": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "createdBy",
+        "dataType": "nchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

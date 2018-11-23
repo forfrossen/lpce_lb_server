@@ -56,5 +56,17 @@
   "Heimarbeit": {
     "dataSource": "qcd480d03JDE",
     "public": true
+  },
+  "Items": {
+    "dataSource": "qcd480d03JDE",
+    "public": true
+  },
+  "OpenOrders": {
+    "dataSource": "qcd480d03JDE",
+    "public": true
+  },
+  "OpenOrdersComment": {
+    "dataSource": "qcd480d03JDE",
+    "public": true
   }
 }

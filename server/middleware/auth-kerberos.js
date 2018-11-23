@@ -1,8 +1,21 @@
 module.exports = function () {  
 	return function ( req, res, next ) {
-		
+		/*
+		console.log( 'KerbAuth Called' );
+		console.log( 'req.kerbUserId : %O', req.kerbUserId  );
+		console.log( 'req.headers.authorization: %O',  req.headers.authorization);
+		console.log( 'req.isAuthenticated(): %O', req.isAuthenticated() );
+		console.log( 'req.accessToken: %O',  req.accessToken);
+		*/
+
+
 		const path = require( 'path' );
 		var kerbAuthNeeded = true;
+		
+		if ( req.accessToken )
+			return next();
+		//else 
+		//	console.log( 'No Token! Req: %O', req.headers.authorization );	
 
 		if ( req.kerbUserId ) {
 			kerbAuthNeeded = false;
@@ -14,8 +27,11 @@ module.exports = function () {
 
 				if ( authHeader.lastIndexOf( 'Negotiate' ) >= 0 )
 					kerbAuthNeeded = true;
-				else
+				else {
+					//req.accessToken = {};
+					//req.accessToken.id = req.headers.authorization;
 					kerbAuthNeeded = false;
+				}
 
 			}
 
@@ -42,8 +58,14 @@ module.exports = function () {
 				kerbAuthNeeded = false;
 				return next();
 			}
+			
+			if ( req.path.includes('explorer')) {
+				kerbAuthNeeded = false;
+				return next();
+			}
 
 			if ( !kerbAuthNeeded ) {
+				console.log( 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' + kerbAuthNeeded);	
 				return next();
 			} else {
 
@@ -52,7 +74,7 @@ module.exports = function () {
 					return res.status( 401 ).set( 'WWW-Authenticate', 'Negotiate' ).end();
 
 				} else {
-
+					//console.log( '=X=' );
 					req.authHeader = req.authHeader || {};
 					req.authHeader.token = authHeader.substring( 'Negotiate '.length );
 
