@@ -5,8 +5,8 @@
 		"authScheme": "ad",
 		"authPath": "/auth/ad",
 		"json": true,
-		"session": false,   
-		"link": false, 
+		"session": true,   
+		"link": true, 
 		"username": "kerbUserId",
 		"profileAttributesFromLDAP": {
 			"login": "sAMAccountName",

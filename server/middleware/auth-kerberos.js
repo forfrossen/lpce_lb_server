@@ -12,8 +12,10 @@ module.exports = function () {
 		const path = require( 'path' );
 		var kerbAuthNeeded = true;
 		
-		if ( req.accessToken )
+		if ( req.accessToken ) {
+			kerbAuthNeeded = false;
 			return next();
+		}
 		//else 
 		//	console.log( 'No Token! Req: %O', req.headers.authorization );	
 
@@ -31,6 +33,7 @@ module.exports = function () {
 					//req.accessToken = {};
 					//req.accessToken.id = req.headers.authorization;
 					kerbAuthNeeded = false;
+					return next();
 				}
 
 			}

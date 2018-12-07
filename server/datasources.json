@@ -1,8 +1,7 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory",
-    "file": "db.json"
+    "connector": "memory"
   },
   "qcd480d03JDE": {
     "host": "qcd480d03",

@@ -57,7 +57,23 @@ module.exports = function ( OpenOrdersComment ) {
 	} );
 
 	OpenOrdersComment.observe( 'after save', function ( ctx, next ) {
+		//ctx.instance.created = formatDate(ctx.instance.created);
 		if ( debugOpenOrdersComment ) console.log( '\n> after save triggered for %O: \n %O', ctx.Model.modelName, ctx.instance );
 		return next();
 	} );
 };
+
+function formatDate(date) {
+	if ( !date ) return null;
+
+	
+	
+	var day = date.getDate();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+	var returndate = ( "0" + day.toString() ).slice( -2 ) + '.' + ( "0" + month.toString() ).slice( -2 ) + '.' + year;
+
+	console.log( 'datum: ', date, 'returndate: ', returndate );
+
+	return returndate;
+}
