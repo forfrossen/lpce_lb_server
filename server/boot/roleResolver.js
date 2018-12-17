@@ -30,6 +30,7 @@ module.exports = function ( app ) {
 		var WebApp = context.modelName;
 		//Q: Is the user logged in? (there will be an accessToken with an ID if so)
 		var userId = context.accessToken.userId;
+
 		if ( !userId ) {
 			//A: No, user is NOT logged in: callback with FALSE
 			return process.nextTick( () => cb( null, false ) );
@@ -43,8 +44,11 @@ module.exports = function ( app ) {
 			var userGroups = profile.profile._groups
 
 			var ADWebAppReaderGroup = 'QCD480GG_WEB_' + WebApp.toUpperCase(); + '_READ';
+
+			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment')
+				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders'
 			
-			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
+			console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
 
 			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
 			else return cb(null, false);
@@ -70,7 +74,10 @@ module.exports = function ( app ) {
 
 			var ADWebAppReaderGroup = 'QCD480GG_WEB_' + WebApp.toUpperCase() + '_WRITE';
 			
-			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
+			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment' )
+				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders'
+			
+			console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
 
 			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
 			else return cb(null, false);

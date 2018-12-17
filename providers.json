@@ -20,7 +20,7 @@
 		},
 		"integrated": true,
 		"ldap": {
-			"url": "ldap://TFD044C30.uk.parker.corp:389",
+			"url": "ldap://QCD480C30.uk.parker.corp:389",
 			"baseDN": "OU=QCD480,OU=QCD,OU=FCG,DC=uk,DC=parker,DC=corp",
 			"username": "QCD480SAJB02@uk.parker.corp",
 			"password": "Le8x2mE"
