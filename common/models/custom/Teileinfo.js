@@ -1,16 +1,16 @@
 var LoopBackContext = require( 'loopback-context' );
 const debugTeileinfo = false;
-module.exports = function ( TeileinfoNeu ) {
+module.exports = function ( Teileinfo ) {
 
-	TeileinfoNeu.validatesPresenceOf( 'zeichnungsnummer', 'litm', 'teileinfoAllg' );
-	TeileinfoNeu.validatesDateOf( 'dateAllg', { allowNull: true, message: 'dateAllg kein DATUM!' } );
-	TeileinfoNeu.validatesDateOf( 'dateSek', { allowNull: true, message: 'dateSek kein DATUM!' } );
+	Teileinfo.validatesPresenceOf( 'zeichnungsnummer', 'litm', 'teileinfoAllg' );
+	Teileinfo.validatesDateOf( 'dateAllg', { allowNull: true, message: 'dateAllg kein DATUM!' } );
+	Teileinfo.validatesDateOf( 'dateSek', { allowNull: true, message: 'dateSek kein DATUM!' } );
 	
 	
-	//TeileinfoNeu.validatesNumericalityOf('zeichnungsnummer', {int: true});
+	//Teileinfo.validatesNumericalityOf('zeichnungsnummer', {int: true});
 
 
-	TeileinfoNeu.observe('access', function(ctx, next) {
+	Teileinfo.observe('access', function(ctx, next) {
 		
 		const token = ctx.options && ctx.options.accessToken;
 		const userId = token && token.userId;
@@ -32,13 +32,13 @@ module.exports = function ( TeileinfoNeu ) {
 		return next();
  	});
 	
-	TeileinfoNeu.beforeRemote( '**', function ( ctx, user, next ) {
+	Teileinfo.beforeRemote( '**', function ( ctx, user, next ) {
 		if ( debugTeileinfo ) console.log( ctx.methodString, 'was invoked remotely '); // customers.prototype.save was invoked remotely
 		return next();
 	});
 
 
-	TeileinfoNeu.observe( 'before save', function ( ctx, next  ) {
+	Teileinfo.observe( 'before save', function ( ctx, next  ) {
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' );
 
@@ -86,16 +86,16 @@ module.exports = function ( TeileinfoNeu ) {
 
 
 	// model operation hook
-	TeileinfoNeu.observe( 'before save', function ( ctx, next ) {
+	Teileinfo.observe( 'before save', function ( ctx, next ) {
 		if ( ctx.instance ) {
-			if ( debugTeileinfo ) console.log( '\n\nAbout to save a TeileinfoNeu instance:', ctx.instance );
+			if ( debugTeileinfo ) console.log( '\n\nAbout to save a Teileinfo instance:', ctx.instance );
 		} else {
-			if ( debugTeileinfo ) console.log( '\n\nAbout to update TeileinfoNeu that match the query %j:', ctx.where );
+			if ( debugTeileinfo ) console.log( '\n\nAbout to update Teileinfo that match the query %j:', ctx.where );
 		}
 		return next();
 	} );
 
-	TeileinfoNeu.observe( 'after save', function ( ctx, next ) {
+	Teileinfo.observe( 'after save', function ( ctx, next ) {
 		if ( debugTeileinfo ) console.log( '\n> after save triggered:', ctx.Model.modelName, ctx.instance );
 		return next();
 	} );

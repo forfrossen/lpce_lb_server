@@ -1,0 +1,45 @@
+{
+  "name": "EnoviaReferenceItem",
+  "mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find"] }},
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "enovia_reference"
+    },
+    "relations": {}
+  },
+  "properties": {
+	"id": false,
+    "montageanleitung": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "Montageanleitung",
+        "dataType": "nvarchar",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "jdeitem": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "JDEItem",
+        "dataType": "nvarchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

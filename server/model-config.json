@@ -1,9 +1,11 @@
 {
   "_meta": {
     "sources": [
-      "loopback/common/models",
+	  "loopback/common/models",
+	  "loopback/common/models/custom",
       "loopback/server/models",
       "../common/models",
+      "../common/models/custom",
       "./models",
       "../node_modules/loopback-component-passport/lib/models"
     ],
@@ -11,7 +13,8 @@
       "loopback/common/mixins",
       "loopback/server/mixins",
       "../common/mixins",
-      "./mixins"
+	  "./mixins",
+	  "../node_modules/loopback-setup-remote-methods-mixin"
     ]
   },
   "user": {
@@ -45,7 +48,7 @@
   "Message": {
     "dataSource": null
   },
-  "TeileinfoNeu": {
+  "Teileinfo": {
     "dataSource": "qcd480d03JDE",
     "public": true
   },
@@ -57,15 +60,27 @@
     "dataSource": "qcd480d03JDE",
     "public": true
   },
-  "Items": {
+  "Item": {
     "dataSource": "qcd480d03JDE",
     "public": true
   },
-  "OpenOrders": {
+  "OpenOrder": {
     "dataSource": "qcd480d03JDE",
     "public": true
   },
-  "OpenOrdersComment": {
+  "OpenOrderComment": {
+    "dataSource": "qcd480d03JDE",
+    "public": true
+  },
+  "Workorder": {
+    "dataSource": "qcd480d03JDE",
+	"public": true
+  },
+  "EnoviaOfflineSearchFile": {
+    "dataSource": "qcd480d03JDE",
+    "public": true
+  },
+  "EnoviaReferenceItem": {
     "dataSource": "qcd480d03JDE",
     "public": true
   }

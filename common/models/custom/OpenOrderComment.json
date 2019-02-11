@@ -1,5 +1,5 @@
 {
-  "name": "OpenOrdersComment",
+  "name": "OpenOrderComment",
   "options": {
     "idInjection": false,
     "mssql": {

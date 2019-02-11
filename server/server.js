@@ -56,6 +56,9 @@ app.middleware('initial:before', (req, res, next) => {
 	return next();
 } )
 */
+
+
+
 app.middleware( 'initial:before', loopback.token( { model: app.models.accessToken } ) );
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
@@ -94,7 +97,9 @@ app.middleware('initial:after', function ( req, res, next ) {
 	//console.log( 'User from Session: ', req.session.authenticatedPrincipal );
 	console.log( '===========================================================================\n\n\n' );
 	return next();
-} );/*
+} );
+*/
+/*
 app.middleware('routes:after', function ( req, res, next ) {
 
 	console.log( '===========================================================================' );
@@ -114,6 +119,42 @@ app.use ( (req, res, next ) => {
 */
 // We need flash messages to see passport errors
 app.use( flash() );
+
+app.get( '/pdf', function ( req, res, next ) {
+	
+	
+	if ( !req.query.file )
+		res.status( 404 ).send( 'PDF Not found!' );
+	else {
+		var connection = {
+			host: 'qcd480a01',
+			port: 21,
+			user: 'USPHC\\COR089FTPMatrixOne',
+			password: 'N3oOr@cle'
+		}
+	
+		var Client = require( 'ftp' );
+		
+		
+		var c = new Client();
+		c.on( 'ready', function () {
+			c.get( 'STORE/' + req.query.file, function ( err, stream ) {
+				if ( err ) throw err;
+				
+				stream.once( 'close', function () { c.end(); } );
+				res.setHeader( "content-type", "application/pdf" );
+				res.setHeader( "X-Frame-Options", "allow" );
+				stream.pipe( res )
+				
+			} );
+		} );
+	
+		c.connect( connection );
+	}
+	
+
+})
+
 
 app.start = function () {
 	// start the web server

@@ -1,31 +1,24 @@
 {
   "ids": {
-    "user": 6,
-    "accessToken": 237,
-    "ACL": 2,
+    "user": 1,
+    "accessToken": 1,
+    "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
     "userCredential": 1,
-    "userIdentity": 6
+    "userIdentity": 1
   },
   "models": {
     "user": {
-      "3": "{\"username\":\"ad.MK024480\",\"password\":\"$2a$10$6giHdPUQXRTXRac4WHVv3OiLuZY7Co4yRARebaOTQcqpGGK5fy8Xq\",\"email\":\"MK024480@loopback.ad.com\",\"id\":3}",
-      "4": "{\"username\":\"ad.528517\",\"password\":\"$2a$10$fXO1bdvccS1mgrlgETSXYuBY7hnaq8cvJEcsq5Ak3aitHFBIDlDl6\",\"email\":\"528517@loopback.ad.com\",\"id\":4}",
-      "5": "{\"username\":\"ad.IT004480\",\"password\":\"$2a$10$o4iH8BJxcCT9feUnKhCoz.gDBMcBHwYi3zhQi/v9KluTZwCyyXB6G\",\"email\":\"IT004480@loopback.ad.com\",\"id\":5}"
     },
     "accessToken": {
     },
     "ACL": {
-      "1": "{\"model\":\"project\",\"property\":\"withdraw\",\"accessType\":\"EXECUTE\",\"permission\":\"ALLOW\",\"principalType\":\"ROLE\",\"principalId\":\"$owner\",\"id\":1}"
     },
     "RoleMapping": {},
     "Role": {},
     "userCredential": {},
     "userIdentity": {
-      "3": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"MK024480\",\"profile\":{\"login\":\"MK024480\",\"username\":\"MK024480\",\"uid\":\"MK024480\",\"id\":\"MK024480\",\"_groups\":[\"QCD480DLCTXScala\",\"QCD480DLCTXWordViewer\",\"QCD480DLVault_DIVADMIN\",\"QCD480GGArsAccessControl\",\"QCD480GGB2\",\"QCD480GGD3_Admins\",\"QCD480GGEnoviaDocSearch\",\"QCD480GGIt\",\"QCD480GGJDEInstall\",\"QCD480GGOUAdministrators\",\"QCD480GGOlapAbsatz\",\"QCD480GGPFEPPRODM\",\"QCD480GGQSYS\",\"QCD480GGSMSAdministrators\",\"QCD480GGSSRSCCH\",\"QCD480GGScala\",\"QCD480GGWarehouse\",\"QCD480GG_VAULT_DIVADMIN\"],\"displayName\":\"Markus Kristen\",\"emails\":[{\"value\":\"Markus.Kristen@Parker.com\"}],\"email\":\"Markus.Kristen@Parker.com\",\"externalId\":\"MK024480\"},\"credentials\":{},\"created\":\"2018-10-26T06:52:20.921Z\",\"modified\":\"2018-11-30T08:32:41.411Z\",\"userId\":3,\"id\":3}",
-      "4": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"528517\",\"profile\":{\"login\":\"528517\",\"username\":\"528517\",\"uid\":\"528517\",\"id\":\"528517\",\"_groups\":[\"QCD480DLVault\",\"QCD480DLVault_DIVADMIN\",\"QCD480GGEngineering\",\"QCD480GGEnoviaDocSearch\",\"QCD480GGMechanicalEngineering\",\"QCD480GGQSYS\",\"QCD480GG_VAULT_DIVADMIN\"],\"displayName\":\"Jaime Andres Breton\",\"emails\":[{\"value\":\"jaimeandres.breton@parker.com\"}],\"email\":\"jaimeandres.breton@parker.com\",\"externalId\":\"528517\"},\"credentials\":{},\"created\":\"2018-10-30T12:48:21.964Z\",\"modified\":\"2018-10-30T12:48:21.964Z\",\"userId\":4,\"id\":4}",
-      "5": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"IT004480\",\"profile\":{\"login\":\"IT004480\",\"username\":\"IT004480\",\"uid\":\"IT004480\",\"id\":\"IT004480\",\"_groups\":[],\"displayName\":\"IT User Visualisation\",\"emails\":[{}],\"externalId\":\"IT004480\"},\"credentials\":{},\"created\":\"2018-11-29T15:53:37.211Z\",\"modified\":\"2018-11-29T15:53:37.211Z\",\"userId\":5,\"id\":5}"
     }
   }
 }

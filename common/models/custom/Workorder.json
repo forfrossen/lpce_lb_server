@@ -1,0 +1,560 @@
+{
+  "name": "Workorder",
+  "mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find"] } },
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "workorders"
+    },
+    "relations": {},
+    "remoting": {
+      "sharedMethods": {
+        "*": false
+      }
+    }
+  },
+  "properties": {
+    "id": false,
+    "wamcu": {
+      "type": "String",
+      "required": true,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAMCU",
+        "dataType": "varchar",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "wadoco": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "WADOCO",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "warorn": {
+      "type": "String",
+      "required": true,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WARORN",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "walnid": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "WALNID",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "waptwo": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "WAPTWO",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "wasrst": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WASRST",
+        "dataType": "varchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wadcg": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WADCG",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "watrdj": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WATRDJ",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wastrt": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WASTRT",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wadrqj": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WADRQJ",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wastrx": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WASTRX",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wappdt": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAPPDT",
+        "dataType": "date",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "waitm": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "WAITM",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "walitm": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WALITM",
+        "dataType": "varchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wauorg": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAUORG",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wasoqs": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WASOQS",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "watbm": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WATBM",
+        "dataType": "varchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "watrt": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WATRT",
+        "dataType": "varchar",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlmcu": {
+      "type": "String",
+      "required": false,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLMCU",
+        "dataType": "varchar",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlrunm": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLRUNM",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlrunl": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLRUNL",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlsetl": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLSETL",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlopsq": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 2,
+      "mssql": {
+        "columnName": "WLOPSQ",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 2,
+        "nullable": "YES"
+      }
+    },
+    "wahrso": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAHRSO",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wahrsa": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAHRSA",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wamoh": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAMOH",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "waltcm": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 5,
+      "scale": 0,
+      "mssql": {
+        "columnName": "WALTCM",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 5,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "wlrorn": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLRORN",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wlrlln": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "WLRLLN",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwadcg": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWADCG",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwatrdj": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWATRDJ",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwastrt": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWASTRT",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwadrqj": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWADRQJ",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwastrx": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWASTRX",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "cwappdt": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CWAPPDT",
+        "dataType": "varchar",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "wavr01": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "WAVR01",
+        "dataType": "varchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 {
-  "name": "Items",
+  "name": "Item",
+  "mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find"] }},
   "options": {
     "idInjection": false,
     "mssql": {

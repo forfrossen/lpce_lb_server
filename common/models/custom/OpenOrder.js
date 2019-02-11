@@ -1,8 +1,8 @@
-module.exports = function ( OpenOrders ) {
+module.exports = function ( OpenOrder ) {
 
 	
 	// Do this for every API Call that is ment to SAVE Data
-	OpenOrders.observe('loaded', (ctx, next) => {
+	OpenOrder.observe('loaded', (ctx, next) => {
 		//console.log( 'Got data: %O', ctx.data );
 		ctx.data.pddrqj = formatDate(ctx.data.pddrqj);
 		ctx.data.pdtrdj = formatDate(ctx.data.pdtrdj);
