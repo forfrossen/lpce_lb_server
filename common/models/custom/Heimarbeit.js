@@ -16,7 +16,7 @@ module.exports = function ( Heimarbeit ) {
 		console.log( '\n> before save triggered:', ctx.Model.modelName, ctx.instance || ctx.data );
 		
 		if ( ctx.isNewInstance ) {
-			ctx.instance.datum = new Date();
+			ctx.instance.datum = new Date( Date.now() + 3600000);
 		} 
 		
 		return next();

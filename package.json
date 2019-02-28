@@ -10,6 +10,7 @@
     "start": "node .",
     "posttest": "npm run lint",
     "dev:server": "NODE_ENV=development nodemon --ignore db.json --ignore client/dist/ --ignore client/ server/server.js --watch",
+    "prod:server": "NODE_ENV=production nodemon --ignore db.json --ignore client/dist/ --ignore client/ server/server.js --watch",
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk -d ng2web -i  disabled",
     "deploy:server": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'ecosystem.config.js' --exclude 'server/log' -n /var/www/node/develop/lpce-webapps/ /var/www/node/production/lpce-webapps/",
     "deploy:server:real": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'ecosystem.config.js' --exclude 'server/log' /var/www/node/develop/lpce-webapps/ /var/www/node/production/lpce-webapps/"
@@ -28,6 +29,7 @@
     "express-session": "^1.7.6",
     "ftp": "^0.3.10",
     "helmet": "^3.10.0",
+    "ipp": "^2.0.1",
     "jade": "^1.7.0",
     "jsonwebtoken": "^8.3.0",
     "loopback": "^3.22.3",

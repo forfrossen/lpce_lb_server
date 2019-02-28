@@ -1,6 +1,6 @@
 {
 	"name": "OpenOrder",
-	"mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find"] }},
+	"mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find", "count"] }},
 	"options": {
 		"idInjection": false,
 		"mssql": {
