@@ -8,7 +8,7 @@ const writeFile = promisify(fs.writeFile);
 const readFile 	= promisify(fs.readFile);
 const mkdirp 	= promisify(require('mkdirp'));
 
-const DATASOURCE_NAME = 'qcd480d06JDE';
+const DATASOURCE_NAME = 'LVS_PROD';
 const dataSourceConfig = require('./server/datasources.json');
 const db = new loopback.DataSource(dataSourceConfig[DATASOURCE_NAME]);
 
@@ -48,7 +48,7 @@ async function discover(table) {
   console.log(dboSchema);
   
   // Create model definition files
-	await writeFile( 'common/models/custom/' + table + '.json', JSON.stringify( dboSchema[ 'dbo.' + table ], null, 2 ) );
+	await writeFile( 'common/models/custom/' + table + '.json', JSON.stringify( dboSchema[ 'IX02M$RE.' + table ], null, 2 ) );
 	
 
   // Expose models via REST API

@@ -1,0 +1,233 @@
+{
+	"name": "Montageanweisung",
+	"options": {
+		"plural": "Montageanweisungen",
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "Montageanweisungen"
+		},
+		"relations": {}
+	},
+	"properties": {
+		"artikel": {
+			"type": "String",
+			"required": true,
+			"id": true,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Artikel",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"loctite": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Loctite",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"fett": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Fett",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"schrauber": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Schrauber",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pruefprogramm": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Pruefprogramm",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pruefadapter": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Pruefadapter",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"bemerkung": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Bemerkung",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"anhang1": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Anhang1",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"anhang2": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Anhang2",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"anhang3": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Anhang3",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"created": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Created",
+				"dataType": "DATETIME",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"changed": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Changed",
+				"dataType": "DATETIME",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"createdby": {
+			"type": "String",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "CreatedBy",
+				"dataType": "nvarchar",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"changedby": {
+			"type": "String",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "ChangedBy",
+				"dataType": "nvarchar",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		}
+	},
+	"mixins": {
+		"MetaData":{
+			"createdAt": "created",
+			"updatedAt": "changed",
+			"createdBy": "createdby",
+			"changedBy": "changedby"
+		}
+	}
+}

@@ -1,87 +1,104 @@
 {
-  "_meta": {
-    "sources": [
-	  "loopback/common/models",
-	  "loopback/common/models/custom",
-      "loopback/server/models",
-      "../common/models",
-      "../common/models/custom",
-      "./models",
-      "../node_modules/loopback-component-passport/lib/models"
-    ],
-    "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
-      "../common/mixins",
-	  "./mixins",
-	  "../node_modules/loopback-setup-remote-methods-mixin"
-    ]
-  },
-  "user": {
-    "dataSource": "db",
-    "public": true
-  },
-  "accessToken": {
-    "dataSource": "db",
-    "public": true
-  },
-  "userCredential": {
-    "dataSource": "db",
-    "public": false
-  },
-  "userIdentity": {
-    "dataSource": "db",
-    "public": true
-  },
-  "ACL": {
-    "dataSource": "db",
-    "public": false
-  },
-  "RoleMapping": {
-    "dataSource": "db",
-    "public": false
-  },
-  "Role": {
-    "dataSource": "db",
-    "public": false
-  },
-  "Message": {
-    "dataSource": null
-  },
-  "Teileinfo": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "Heimarbeiter": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "Heimarbeit": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "Item": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "OpenOrder": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "OpenOrderComment": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  },
-  "Workorder": {
-    "dataSource": "qcd480d03JDE",
-	"public": true
-  },
-  "EnoviaOfflineSearchFile": {
-    "dataSource": "qcd480d06JDE",
-    "public": true
-  },
-  "EnoviaReferenceItem": {
-    "dataSource": "qcd480d03JDE",
-    "public": true
-  }
+	"_meta": {
+		"sources": [
+			"loopback/common/models",
+			"loopback/common/models/custom",
+			"loopback/server/models",
+			"./models",
+			"../common/models",
+			"../common/models/custom",
+			"../node_modules/loopback-component-passport/lib/models"
+		],
+		"mixins": [
+			"loopback/common/mixins",
+			"loopback/server/mixins",
+			"./mixins",
+			"../common/mixins",
+			"../node_modules/loopback-setup-remote-methods-mixin",
+			"../node_modules/loopback-ds-timestamp-mixin"
+		]
+	},
+	"user": {
+		"dataSource": "db",
+		"public": true
+	},
+	"accessToken": {
+		"dataSource": "db",
+		"public": true
+	},
+	"userCredential": {
+		"dataSource": "db",
+		"public": false
+	},
+	"userIdentity": {
+		"dataSource": "db",
+		"public": true
+	},
+	"ACL": {
+		"dataSource": "db",
+		"public": false
+	},
+	"RoleMapping": {
+		"dataSource": "db",
+		"public": false
+	},
+	"Role": {
+		"dataSource": "db",
+		"public": false
+	},
+	"Message": {
+		"dataSource": null
+	},
+	"Teileinfo": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"Heimarbeiter": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"Heimarbeit": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"Item": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"OpenOrder": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"OpenOrderComment": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"Workorder": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"EnoviaOfflineSearchFile": {
+		"dataSource": "qcd480d06JDE",
+		"public": true
+	},
+	"EnoviaReferenceItem": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"Montageanweisung": {
+		"dataSource": "qcd480d06JDE",
+		"public": true
+	},
+	"TBWEDATEN": {
+		"dataSource": "LVS_PROD",
+		"public": true
+	},
+	"PlanerNrToADID": {
+		"dataSource": "qcd480d03JDE",
+		"public": true
+	},
+	"HttpForwarding": {
+		"dataSource": "qcd480d06JDE",
+		"public": true
+	}
 }

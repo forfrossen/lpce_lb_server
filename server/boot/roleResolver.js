@@ -48,7 +48,7 @@ module.exports = function ( app ) {
 			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment')
 				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders'
 			
-			console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
+			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
 
 			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
 			else return cb(null, false);
@@ -77,7 +77,7 @@ module.exports = function ( app ) {
 			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment' )
 				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders'
 			
-			console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
+			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
 
 			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
 			else return cb(null, false);

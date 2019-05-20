@@ -38,5 +38,13 @@
 		"options": {
 			"encrypt": false
 		}
+	},
+	"LVS_PROD": {
+		"connector": "oracle",
+		"tns": "LVS",
+		"port": 3306,
+		"database": "LVS",
+		"password": "ducati",
+		"user": "ix02m$re"
 	}
 }

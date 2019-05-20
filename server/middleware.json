@@ -58,6 +58,9 @@
 			"params": "$!../client/dist"
 		}
 	},
+	"files:after": {
+		"./middleware/myRouting.js": {}
+	},
 	"final": {
 		"loopback#urlNotFound": {}
 	},

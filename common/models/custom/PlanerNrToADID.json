@@ -1,0 +1,45 @@
+{
+  "name": "PlanerNrToADID",
+  "mixins": { "SetupRemoteMethods": { "disableAllExcept": ["find"] }},
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "PlannerNrToADID"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "id": false,
+    "aban8": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 18,
+      "scale": 0,
+      "mssql": {
+        "columnName": "ABAN8",
+        "dataType": "numeric",
+        "dataLength": null,
+        "dataPrecision": 18,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "username": {
+      "type": "String",
+      "required": true,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "UserName",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  }
+}

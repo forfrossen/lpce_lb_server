@@ -1,11 +1,18 @@
 module.exports = function ( app ) {
-
+	
 	var router = app.loopback.Router();
-
+	
+	/*
+	//
+	// REDIRECTION NOW HANDLED ABOVE VIA DATABASE for easier modification
+	//
 	router.get( '/montageanleitungen', function ( req, res, next ) {
 		res.redirect( '/#/pages/enovia/montageanleitungen' );
 	} );
 	
+	router.get( '/konsi_anlieferinfo', function ( req, res, next ) {
+		res.redirect( 'http://qcd480w02/konsi_anlieferinfo' );
+	} );
 
 	router.get( '/wifi', function ( req, res, next ) {
 		res.redirect( 'https://idc091a253:8443/sponsorportal/PortalSetup.action?portal=cde47211-7641-11e4-92f8-0050569d1229' );
@@ -15,7 +22,8 @@ module.exports = function ( app ) {
 	router.get( '/wlan', function ( req, res, next ) {
 		res.redirect( 'https://idc091a253:8443/sponsorportal/PortalSetup.action?portal=cde47211-7641-11e4-92f8-0050569d1229' );
 	} );
-
+	*/
+	
 	router.get( '/pdf', function ( req, res, next ) {
 
 		if ( !req.query.file ) res.status( 404 ).send( 'PDF Not found!' );

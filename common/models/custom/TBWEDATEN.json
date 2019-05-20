@@ -1,0 +1,708 @@
+{
+  "name": "TBWEDATEN",
+  "options": {
+    "idInjection": false,
+    "oracle": {
+      "schema": "IX02M$RE",
+      "table": "TBWEDATEN"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "lieferant": {
+      "type": "String",
+      "required": false,
+      "length": 30,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LIEFERANT",
+        "dataType": "VARCHAR2",
+        "dataLength": 30,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lieferantnr": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LIEFERANTNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "aufnr": {
+      "type": "String",
+      "required": false,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "AUFNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "qsKenn": {
+      "type": "Boolean",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "QS_KENN",
+        "dataType": "CHAR",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "betext1": {
+      "type": "String",
+      "required": false,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "BETEXT1",
+        "dataType": "VARCHAR2",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "betext2": {
+      "type": "String",
+      "required": false,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "BETEXT2",
+        "dataType": "VARCHAR2",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "betext3": {
+      "type": "String",
+      "required": false,
+      "length": 40,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "BETEXT3",
+        "dataType": "VARCHAR2",
+        "dataLength": 40,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "packgr": {
+      "type": "String",
+      "required": false,
+      "length": 4,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "PACKGR",
+        "dataType": "VARCHAR2",
+        "dataLength": 4,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "packart": {
+      "type": "String",
+      "required": false,
+      "length": 5,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "PACKART",
+        "dataType": "VARCHAR2",
+        "dataLength": 5,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "liefapl": {
+      "type": "String",
+      "required": false,
+      "length": 5,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LIEFAPL",
+        "dataType": "VARCHAR2",
+        "dataLength": 5,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "anzQsLb": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": 0,
+      "oracle": {
+        "columnName": "ANZ_QS_LB",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "reserviert": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "RESERVIERT",
+        "dataType": "VARCHAR2",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "reserve": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "RESERVE",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "gedruckt": {
+      "type": "Boolean",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "GEDRUCKT",
+        "dataType": "CHAR",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "oradate": {
+      "type": "Date",
+      "required": false,
+      "length": 7,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "ORADATE",
+        "dataType": "DATE",
+        "dataLength": 7,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "webwa": {
+      "type": "String",
+      "required": true,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "id": 1,
+      "oracle": {
+        "columnName": "WEBWA",
+        "dataType": "VARCHAR2",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "wenr": {
+      "type": "String",
+      "required": true,
+      "length": 14,
+      "precision": null,
+      "scale": null,
+      "id": 2,
+      "oracle": {
+        "columnName": "WENR",
+        "dataType": "VARCHAR2",
+        "dataLength": 14,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "folgenra": {
+      "type": "String",
+      "required": true,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "id": 3,
+      "oracle": {
+        "columnName": "FOLGENRA",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "wepos": {
+      "type": "String",
+      "required": true,
+      "length": 4,
+      "precision": null,
+      "scale": null,
+      "id": 4,
+      "oracle": {
+        "columnName": "WEPOS",
+        "dataType": "VARCHAR2",
+        "dataLength": 4,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "folgenrb": {
+      "type": "String",
+      "required": true,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "id": 5,
+      "oracle": {
+        "columnName": "FOLGENRB",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "weBarcode": {
+      "type": "String",
+      "required": false,
+      "length": 61,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "WE_BARCODE",
+        "dataType": "VARCHAR2",
+        "dataLength": 61,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "projnr": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "PROJNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "sachnr": {
+      "type": "String",
+      "required": false,
+      "length": 26,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "SACHNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 26,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "chargenNr": {
+      "type": "String",
+      "required": false,
+      "length": 20,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "CHARGEN_NR",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "dispstat": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "DISPSTAT",
+        "dataType": "VARCHAR2",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "sperrstat": {
+      "type": "Boolean",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "SPERRSTAT",
+        "dataType": "CHAR",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lagort": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LAGORT",
+        "dataType": "VARCHAR2",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lhmnr": {
+      "type": "String",
+      "required": false,
+      "length": 6,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LHMNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 6,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "me": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "ME",
+        "dataType": "VARCHAR2",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "sollmenge": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "SOLLMENGE",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "istmenge": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "ISTMENGE",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "liefmenge": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LIEFMENGE",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lhmtyp": {
+      "type": "String",
+      "required": false,
+      "length": 3,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LHMTYP",
+        "dataType": "VARCHAR2",
+        "dataLength": 3,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "bestellnr": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "BESTELLNR",
+        "dataType": "VARCHAR2",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "bestellpos": {
+      "type": "String",
+      "required": false,
+      "length": 4,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "BESTELLPOS",
+        "dataType": "VARCHAR2",
+        "dataLength": 4,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "weInfotext": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "WE_INFOTEXT",
+        "dataType": "VARCHAR2",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "weFehler": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "WE_FEHLER",
+        "dataType": "VARCHAR2",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "eindat": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "EINDAT",
+        "dataType": "VARCHAR2",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "einzeit": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "EINZEIT",
+        "dataType": "VARCHAR2",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "aendat": {
+      "type": "String",
+      "required": false,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "AENDAT",
+        "dataType": "VARCHAR2",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "aenzeit": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "AENZEIT",
+        "dataType": "VARCHAR2",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "lastuser": {
+      "type": "String",
+      "required": false,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "LASTUSER",
+        "dataType": "VARCHAR2",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "refgew": {
+      "type": "Number",
+      "required": false,
+      "length": 22,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "REFGEW",
+        "dataType": "NUMBER",
+        "dataLength": 22,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "docnum": {
+      "type": "String",
+      "required": false,
+      "length": 16,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "DOCNUM",
+        "dataType": "VARCHAR2",
+        "dataLength": 16,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "kzqui": {
+      "type": "String",
+      "required": false,
+      "length": 1,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "KZQUI",
+        "dataType": "VARCHAR2",
+        "dataLength": 1,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "fag": {
+      "type": "String",
+      "required": false,
+      "length": 8,
+      "precision": null,
+      "scale": null,
+      "oracle": {
+        "columnName": "FAG",
+        "dataType": "VARCHAR2",
+        "dataLength": 8,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    }
+  }
+}
