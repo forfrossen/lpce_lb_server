@@ -8,7 +8,7 @@ const writeFile = promisify(fs.writeFile);
 const readFile 	= promisify(fs.readFile);
 const mkdirp 	= promisify(require('mkdirp'));
 
-const DATASOURCE_NAME = 'qcd480d06JDE';
+const DATASOURCE_NAME = 'qcd480d03JDE';
 const dataSourceConfig = require('./server/datasources.json');
 const db = new loopback.DataSource(dataSourceConfig[DATASOURCE_NAME]);
 
