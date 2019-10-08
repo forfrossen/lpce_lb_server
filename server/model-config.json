@@ -20,6 +20,7 @@
   },
   "user": {
     "dataSource": "db",
+    "allowEternalTokens": false,
     "public": true
   },
   "accessToken": {
@@ -40,7 +41,10 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
   },
   "Role": {
     "dataSource": "db",
@@ -50,43 +54,43 @@
     "dataSource": null
   },
   "Teileinfo": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Heimarbeiter": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Heimarbeit": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Item": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "OpenOrder": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "OpenOrderComment": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Workorder": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "EnoviaOfflineSearchFile": {
-    "dataSource": "qcd480d06JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "EnoviaReferenceItem": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Montageanweisung": {
-    "dataSource": "qcd480d06JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "TBWEDATEN": {
@@ -94,15 +98,26 @@
     "public": true
   },
   "PlanerNrToADID": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "HttpForwarding": {
-    "dataSource": "qcd480d06JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource"
+  },
+  "WebAppsConfig": {
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   },
   "Artikelstammanlage": {
-    "dataSource": "qcd480d03JDE",
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "ArtikelstammanlageHistorie": {
+    "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   }
 }

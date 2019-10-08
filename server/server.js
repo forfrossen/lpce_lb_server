@@ -59,7 +59,11 @@ app.middleware('initial:before', (req, res, next) => {
 
 
 
-app.middleware( 'initial:before', loopback.token( { model: app.models.accessToken } ) );
+app.middleware( 'initial:after', loopback.token({
+	model: app.models.accessToken,
+	currentUserLiteral: 'me'
+}));
+
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
 
@@ -121,6 +125,9 @@ app.use ( (req, res, next ) => {
 app.use( flash() );
 
 app.start = function () {
+	app.models.user.settings.acls = require('../common/models/user.json').acls;
+	app.models.userIdentity.settings.acls = require('../common/models/user-identity.json').acls;
+
 	// start the web server
 	return app.listen( function () {
 		app.emit( 'started' );

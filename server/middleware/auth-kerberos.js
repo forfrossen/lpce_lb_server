@@ -1,12 +1,13 @@
 module.exports = function () {  
 	return function ( req, res, next ) {
-		/*
+		var lbctx = require('loopback-context').getCurrentContext({ bind: true });
+/*		
 		console.log( 'KerbAuth Called' );
 		console.log( 'req.kerbUserId : %O', req.kerbUserId  );
 		console.log( 'req.headers.authorization: %O',  req.headers.authorization);
 		console.log( 'req.isAuthenticated(): %O', req.isAuthenticated() );
 		console.log( 'req.accessToken: %O',  req.accessToken);
-		*/
+*/		
 
 
 		const path = require( 'path' );

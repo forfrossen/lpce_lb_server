@@ -39,9 +39,7 @@
 	"auth:before": {
 		"./middleware/auth-kerberos.js": {	}
 	},
-	"auth": {
-		"loopback#token": {}
-	},
+	"auth": { "loopback#token": {}},
 	"auth:after": {
 		"./middleware/store-current-user.js": {	}
 	},

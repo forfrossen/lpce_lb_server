@@ -1,5 +1,6 @@
 module.exports = function () {
 	return function myRouting( req, res, next ) {
+		var lbctx = require('loopback-context').getCurrentContext({ bind: true });
 		var app 	= require( '../server.js' );
 		var routes 	= app.models.HttpForwarding;
 

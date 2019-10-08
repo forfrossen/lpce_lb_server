@@ -1,7 +1,8 @@
 {
 	"db": {
 		"name": "db",
-		"connector": "memory"
+		"connector": "memory",
+		"file": "mydata.json"
 	},
 	"LPCE480SQLPRODJDE": {
 		"host": "LPCE480SQLPROD",
@@ -9,6 +10,18 @@
 		"database": "JDE",
 		"password": "biuser",
 		"name": "LPCE480SQLPRODJDE",
+		"connector": "mssql",
+		"user": "bi-user",
+		"options": {
+			"encrypt": false
+		}
+	},
+	"LPCE480SQLPRODMISC": {
+		"host": "LPCE480SQLPROD",
+		"port": 1433,
+		"database": "misc",
+		"password": "biuser",
+		"name": "LPCE480SQLPRODMISC",
 		"connector": "mssql",
 		"user": "bi-user",
 		"options": {
@@ -46,5 +59,17 @@
 		"database": "LVS",
 		"password": "ducati",
 		"user": "ix02m$re"
-	}
+	},
+	"myEmailDataSource": {
+		"connector": "mail",
+		"transports": [{
+			"type": "smtp",
+			"host": "smtp.uk.parker.corp",
+			"secure": false,
+			"port": 25,
+			"tls": {
+				"rejectUnauthorized": false
+			}
+		}]
+  	}
 }
