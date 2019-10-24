@@ -9,11 +9,11 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
-    "dev:server": "NODE_ENV=development nodemon --ignore db.json --ignore client/dist/ --ignore client/ server/server.js --watch",
-    "prod:server": "NODE_ENV=production nodemon --ignore db.json --ignore client/dist/ --ignore client/ server/server.js --watch",
-    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js /var/www/node/develop/lpce-webapps-client/src/app/shared/sdk -d ng2web -i  disabled",
-    "deploy:server": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'ecosystem.config.js' --exclude 'server/log' -n /var/www/node/develop/lpce-webapps-server/ /var/www/node/production/lpce-webapps/",
-    "deploy:server:real": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'ecosystem.config.js' --exclude 'server/log' /var/www/node/develop/lpce-webapps-server/ /var/www/node/production/lpce-webapps/"
+    "dev:server": "NODE_ENV=development nodemon --ignore mydata.json --ignore client/dist/ --ignore client/ server/server.js --watch",
+    "prod:server": "NODE_ENV=production nodemon --ignore mydata.json --ignore client/dist/ --ignore client/ server/server.js --watch",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js /var/www/node/develop/lpce-webapps-client2/src/app/shared/sdk -d ng2web -i  disabled",
+    "deploy:server": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'mydata.json' --exclude 'ecosystem.config.js' --exclude 'server/log' -n /var/www/node/develop/lpce-webapps-server/ /var/www/node/production/lpce-webapps/",
+    "deploy:server:real": "rsync -arv --exclude 'client' --exclude 'node_modules' --exclude 'log' --exclude '.git' --exclude 'db.json' --exclude 'mydata.json' --exclude 'ecosystem.config.js' --exclude 'server/log' /var/www/node/develop/lpce-webapps-server/ /var/www/node/production/lpce-webapps/"
   },
   "dependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",
@@ -39,6 +39,7 @@
     "loopback-connector-ldap": "^2.0.27",
     "loopback-connector-mssql": "^3.3.0",
     "loopback-connector-oracle": "^4.1.2",
+    "loopback-connector-sendmail": "0.0.2",
     "loopback-context": "^3.4.0",
     "loopback-ds-timestamp-mixin": "^3.4.1",
     "loopback-setup-remote-methods-mixin": "^1.2.1",

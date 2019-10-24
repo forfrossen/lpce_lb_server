@@ -1,3 +1,14 @@
+[{
+  "accessType": "*",
+  "principalType": "ROLE",
+  "principalId": "GGUsers",
+  "permission": "ALLOW",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+},
 {
   "accessType": "*",
   "principalType": "ROLE",
@@ -8,4 +19,4 @@
   "relations": {},
   "acls": [],
   "methods": {}
-}
+}]

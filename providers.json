@@ -11,12 +11,11 @@
 		"profileAttributesFromLDAP": {
 			"login": "sAMAccountName",
 			"username": "sAMAccountName",
-			"uid": "sAMAccountName",
-			"id": "sAMAccountName",
 			"_groups": "_groups",
 			"displayName": "displayName",
 			"email": "mail",
-			"externalId": "sAMAccountName"
+			"externalId": "sAMAccountName",
+			"id": "sAMAccountName"
 		},
 		"integrated": true,
 		"ldap": {

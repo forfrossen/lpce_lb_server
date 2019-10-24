@@ -1,0 +1,39 @@
+{
+  "ids": {
+    "user": 7,
+    "accessToken": 5,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "userCredential": 1,
+    "userIdentity": 7
+  },
+  "models": {
+    "user": {
+      "1": "{\"username\":\"ad.IT003480\",\"password\":\"$2a$10$9Arv6Z0ZCWUgTdA2st6CdOH/ysllzjK8UD1KV4ZyMVDsqPzNIbGU2\",\"email\":\"IT003480@loopback.ad.com\",\"id\":1}",
+      "2": "{\"username\":\"ad.MK024480\",\"password\":\"$2a$10$QKA5wMnpHrFCdX3uIKw57OrVpRLUDEztyz3CaB9TZZAPjl3Wqzed.\",\"email\":\"MK024480@loopback.ad.com\",\"id\":2}",
+      "3": "{\"username\":\"ad.DZ191480\",\"password\":\"$2a$10$2i3kPrqWFXzPGFhSVaeGWefIZkjbNFsesyHKPyA9sIT1qMlZVJENS\",\"email\":\"DZ191480@loopback.ad.com\",\"id\":3}",
+      "4": "{\"username\":\"ad.IT004480\",\"password\":\"$2a$10$7SB28VIGuFywKA213xzcdunhneFhqUs5KJP2P/vFx5uT0BNPNttIS\",\"email\":\"IT004480@loopback.ad.com\",\"id\":4}",
+      "5": "{\"username\":\"ad.AM026480\",\"password\":\"$2a$10$3Cw5Yf3bgf4toF4Byqfk8e8fJUS2bhJfrJxSqDVV.DGmjrMm7P9TK\",\"email\":\"AM026480@loopback.ad.com\",\"id\":5}",
+      "6": "{\"username\":\"ad.LG014480\",\"password\":\"$2a$10$uMstmGkWynd9UoYg9z1Jleeb2CeE/CEGkr.NtpzbLFSu1dI4minnu\",\"email\":\"LG014480@loopback.ad.com\",\"id\":6}"
+    },
+    "accessToken": {
+      "BaWyNFbW9ddKKFtLqJDTxvYVQDy2u4yt58tHzFIddaq7abvWgpIXhDFE2GyPslW4": "{\"id\":\"BaWyNFbW9ddKKFtLqJDTxvYVQDy2u4yt58tHzFIddaq7abvWgpIXhDFE2GyPslW4\",\"ttl\":1209600,\"created\":\"2019-09-18T06:36:50.071Z\",\"userId\":1}",
+      "mgNUhPqQ4bF5yPDHaEUcFihdFrSSIf4Dm2u8AmFYKSmsN7L5lobDkxQWEd2K7KxG": "{\"id\":\"mgNUhPqQ4bF5yPDHaEUcFihdFrSSIf4Dm2u8AmFYKSmsN7L5lobDkxQWEd2K7KxG\",\"ttl\":1209600,\"created\":\"2019-09-18T08:14:46.538Z\",\"userId\":6}",
+      "h6F1KMOvWEsbX1rD9CCrgmohD65urcOjkp9U7dVSbkCJ45WXCX5nFxyGSOWHr5ET": "{\"id\":\"h6F1KMOvWEsbX1rD9CCrgmohD65urcOjkp9U7dVSbkCJ45WXCX5nFxyGSOWHr5ET\",\"ttl\":1209600,\"created\":\"2019-09-18T08:17:07.930Z\",\"userId\":6}",
+      "VH7M5tGLNppHSeNcBSPsBffFUShDiiM1iC7mN9flnuTHbuchggap040BKhENlEUA": "{\"id\":\"VH7M5tGLNppHSeNcBSPsBffFUShDiiM1iC7mN9flnuTHbuchggap040BKhENlEUA\",\"ttl\":1209600,\"created\":\"2019-09-18T08:25:04.080Z\",\"userId\":6}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "userCredential": {},
+    "userIdentity": {
+      "1": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"IT003480\",\"profile\":{\"login\":\"IT003480\",\"username\":\"IT003480\",\"_groups\":[\"QCD480GGEnoviaDocSearch\",\"QCD480GGITScheduledTasks\",\"QCD480GGIt\",\"QCD480GGQSYS\",\"QCD480GGSSRSCCH\",\"QCD480GGWarehouse\"],\"displayName\":\"IT User PCs\",\"emails\":[{}],\"externalId\":\"IT003480\",\"id\":\"IT003480\"},\"credentials\":{},\"created\":\"2019-09-18T06:36:50.068Z\",\"modified\":\"2019-09-18T07:24:24.514Z\",\"userId\":1,\"id\":1}",
+      "2": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"MK024480\",\"profile\":{\"login\":\"MK024480\",\"username\":\"MK024480\",\"_groups\":[\"QCD480DLCTXScala\",\"QCD480DLCTXWordViewer\",\"QCD480DLVault_DIVADMIN\",\"QCD480GGArsAccessControl\",\"QCD480GGB2\",\"QCD480GGD3_Admins\",\"QCD480GGEnoviaDocSearch\",\"QCD480GGIt\",\"QCD480GGJDEInstall\",\"QCD480GGOUAdministrators\",\"QCD480GGOlapAbsatz\",\"QCD480GGPFEPPRODM\",\"QCD480GGQSYS\",\"QCD480GGSMSAdministrators\",\"QCD480GGSSRSCCH\",\"QCD480GGScala\",\"QCD480GGWarehouse\",\"QCD480GG_VAULT_DIVADMIN\"],\"displayName\":\"Markus Kristen\",\"emails\":[{\"value\":\"Markus.Kristen@Parker.com\"}],\"email\":\"Markus.Kristen@Parker.com\",\"externalId\":\"MK024480\",\"id\":\"MK024480\"},\"credentials\":{},\"created\":\"2019-09-18T06:45:02.064Z\",\"modified\":\"2019-09-18T07:41:13.166Z\",\"userId\":2,\"id\":2}",
+      "3": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"DZ191480\",\"profile\":{\"login\":\"DZ191480\",\"username\":\"DZ191480\",\"_groups\":[\"QCD480GGB2\",\"QCD480GGEnoviaDocSearch\",\"QCD480GGIdeaLab\",\"QCD480GGInternationalSales\",\"QCD480GGQSYS\",\"QCD480GGServiceteam\",\"QCD480GGWinovation\"],\"displayName\":\"Daniel Zahn\",\"emails\":[{\"value\":\"Daniel.Zahn@Parker.com\"}],\"email\":\"Daniel.Zahn@Parker.com\",\"externalId\":\"DZ191480\",\"id\":\"DZ191480\"},\"credentials\":{},\"created\":\"2019-09-18T06:46:21.153Z\",\"modified\":\"2019-09-18T06:46:21.153Z\",\"userId\":3,\"id\":3}",
+      "4": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"IT004480\",\"profile\":{\"login\":\"IT004480\",\"username\":\"IT004480\",\"_groups\":[\"QCD480GG_WEB_Montageanleitungen\"],\"displayName\":\"IT User Visualisation\",\"emails\":[{}],\"externalId\":\"IT004480\",\"id\":\"IT004480\"},\"credentials\":{},\"created\":\"2019-09-18T06:55:11.077Z\",\"modified\":\"2019-09-18T06:55:56.363Z\",\"userId\":4,\"id\":4}",
+      "5": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"AM026480\",\"profile\":{\"login\":\"AM026480\",\"username\":\"AM026480\",\"_groups\":[\"QCD480GGB2\",\"QCD480GGD3_InsideSales\",\"QCD480GGD3_Purchasing\",\"QCD480GGEnoviaDocSearch\",\"QCD480GGInternationalSales\",\"QCD480GGLogility\",\"QCD480GGLogilityAdmins\",\"QCD480GGLogilityMPUsers\",\"QCD480GGLogilitySOPUsers\",\"QCD480GGLogistics\",\"QCD480GGOlapAbsatz\",\"QCD480GGOlapControl\",\"QCD480GGSSRSCCH\"],\"displayName\":\"Annika Mathias\",\"emails\":[{\"value\":\"annika.mathias@parker.com\"}],\"email\":\"annika.mathias@parker.com\",\"externalId\":\"AM026480\",\"id\":\"AM026480\"},\"credentials\":{},\"created\":\"2019-09-18T06:58:52.248Z\",\"modified\":\"2019-09-18T06:59:33.309Z\",\"userId\":5,\"id\":5}",
+      "6": "{\"provider\":\"ad\",\"authScheme\":\"ad\",\"externalId\":\"LG014480\",\"profile\":{\"login\":\"LG014480\",\"username\":\"LG014480\",\"_groups\":[\"QCD480DLCTXB2\",\"QCD480GGNoInternetAccess\",\"QCD480GGWarehouse\"],\"displayName\":\"AP14\",\"emails\":[{\"value\":\"LG014480@parker.com\"}],\"email\":\"LG014480@parker.com\",\"externalId\":\"LG014480\",\"id\":\"LG014480\"},\"credentials\":{},\"created\":\"2019-09-18T07:43:10.299Z\",\"modified\":\"2019-09-18T08:25:04.070Z\",\"userId\":6,\"id\":6}"
+    }
+  }
+}

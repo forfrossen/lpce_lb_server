@@ -37,7 +37,7 @@ module.exports = function ( OpenOrderComment ) {
 
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' );
-
+		console.log("Current User: %O", currentUser);
 		if ( debugOpenOrderComment ) console.log( 'About to save following insance:\n %O', ctx.instance );
 
 		// Null the fields if they are ''

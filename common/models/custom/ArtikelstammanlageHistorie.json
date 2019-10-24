@@ -1,58 +1,36 @@
 {
-	"name": "Artikelstammanlage",
-	"plural": "Artikelstammanlagen",
+	"name": "ArtikelstammanlageHistorie",
 	"options": {
 		"idInjection": false,
 		"mssql": {
 			"schema": "dbo",
-			"table": "Artikelstammanlage"
+			"table": "ArtikelstammanlageHistorie"
 		},
 		"relations": {
-			"StarterUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "startername",
-				"property": "displayName"
-			},
-			"ManufacturingUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "manufacturingname"
-			},
-			"KonstruktionUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "konstruktionname"
-			},
-			"ServiceteamUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "serviceteamname"
-			},
-			"PricingUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "pricingname"
-			},
-			"ChangedByUser": {
-				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "username"
-			},
-			"versionen": {
-				"type": "hasMany",
-				"model": "ArtikelstammanlageHistorie",
+			"artikelstammanlage": {
+				"type": "belongsTo",
+				"model": "Artikelstammanlage",
 				"foreignKey": "aaId"
 			}
 		}
 	},
 	"properties": {
+		"aahId": {
+			"type": "Number",
+			"required": false,
+			"length": null,
+			"precision": 10,
+			"scale": 0,
+			"id": 1,
+			"mssql": {
+				"columnName": "aahId",
+				"dataType": "int",
+				"dataLength": null,
+				"dataPrecision": 10,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
 		"aaId": {
 			"type": "Number",
 			"required": false,
@@ -175,14 +153,14 @@
 			}
 		},
 		"listenpreis": {
-			"type": "String",
+			"type": "Number",
 			"required": false,
 			"length": -1,
 			"precision": null,
 			"scale": null,
 			"mssql": {
 				"columnName": "ListenPreis",
-				"dataType": "String",
+				"dataType": "float",
 				"dataLength": -1,
 				"dataPrecision": null,
 				"dataScale": null,
@@ -445,10 +423,12 @@
 			}
 		}
 	},
-	"mixins": {
-		"MetaData": {
-			"updatedAt": "changed",
-			"changedBy": "username"
+	"acls": [
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "$authenticated",
+			"permission": "ALLOW"
 		}
-	}
+	]
 }

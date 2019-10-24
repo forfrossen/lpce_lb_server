@@ -7,7 +7,15 @@
       "schema": "dbo",
       "table": "vF4311Open"
     },
-    "relations": {}
+    "relations": {
+		"CreatedByUser": {
+			"type": "hasOne",
+			"model": "userIdentity",
+			"foreignKey": "externalId",
+			"primaryKey": "createdby",
+			"property": "displayName"
+		}
+	}
   },
   "properties": {
     "pddoco": {

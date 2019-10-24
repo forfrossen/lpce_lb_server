@@ -10,7 +10,9 @@ var _extends = Object.assign || function ( target ) { for ( var i = 1; i < argum
 
 
 module.exports = function ( Model, options ) {
-    
+	
+	console.log( "Hello from mixin");
+
     var options = _extends( {
         createdAt: "created",
         updatedAt: "changed",
@@ -24,7 +26,7 @@ module.exports = function ( Model, options ) {
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' ) ;
 
-		if ( ctx.instance ) {
+		if ( ctx.isNewInstance ) {
 			ctx.instance[ options.createdBy ] = currentUser;
 			ctx.instance[ options.createdAt ] = new Date();
 			//console.log( 'About to create following %O insance:\n %O',  ctx.Model.modelName,  ctx.instance );

@@ -1,0 +1,168 @@
+{
+	"name": "WebAppsConfig",
+	"plural": "WebAppsConfigs",
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "WebAppsConfig"
+		},
+		"relations": {}
+	},
+	"properties": {
+		"id": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 10,
+			"scale": 0,
+			"id": 1,
+			"mssql": {
+				"columnName": "id",
+				"dataType": "int",
+				"dataLength": null,
+				"dataPrecision": 10,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"module": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "module",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"type": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "type",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"name": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "name",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"value": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "value",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"created": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "created",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"createdby": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "createdby",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"changed": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "changed",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"changedby": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "changedby",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	},
+	"scopes":{
+		"ArtikelstammanlageEmails":{
+			"where":{
+				"and": [
+					{ "module"	: { "eq": "Artikelstammanlage" }},
+					{ "type"	: { "eq": "Email"}}
+				]
+			}
+		}
+	},
+	"mixins": {
+		"MetaData": {
+			"createdAt": "created",
+			"updatedAt": "changed",
+			"createdBy": "createdby",
+			"changedBy": "changedby"
+		}
+	}
+}

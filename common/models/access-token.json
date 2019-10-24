@@ -2,8 +2,19 @@
   "name": "accessToken",
   "plural": "accessTokens",
   "base": "AccessToken",
-  "properties": {},
-  "validations": [],
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "ttl": {
+      "type": "number",
+      "default": 86400
+    }
+  },
   "relations": {
     "user": {
       "type": "belongsTo",
@@ -11,6 +22,12 @@
       "foreignKey": "userId"
     }
   },
-  "acls": [],
+  "acls": [
+	{
+		"accessType": "*",
+		"principalType": "ROLE",
+		"principalId": "$authenticated",
+		"permission": "ALLOW"
+    }],
   "methods": {}
 }

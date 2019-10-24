@@ -101,6 +101,21 @@
 				"nullable": "YES"
 			}
 		},
+		"anschluss": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "anschluss",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
 		"bemerkung": {
 			"type": "String",
 			"required": false,
