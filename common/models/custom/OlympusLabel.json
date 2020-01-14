@@ -1,0 +1,120 @@
+{
+	"name": "OlympusLabel",
+	"options": {
+		"plural": "OlympusLabels",
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "OlympusLabels"
+		},
+		"relations": {}
+	},
+	"properties": {
+		"partnr": {
+			"type": "String",
+			"required": true,
+			"length": 255,
+			"id": true,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PartNr",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"customerpartnr": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "CustomerPartNr",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"labelsize": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "LabelSize",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"ean": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "EAN",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"labelimage": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "LabelImage",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"labelimageadditional": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "LabelImageAdditional",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"project": {
+			"type": "String",
+			"required": false,
+			"length": 255,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Project",
+				"dataType": "nvarchar",
+				"dataLength": 255,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	}
+}

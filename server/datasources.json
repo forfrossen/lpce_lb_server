@@ -4,6 +4,10 @@
 		"connector": "memory",
 		"file": "mydata.json"
 	},
+	"db2": {
+		"name": "db2",
+		"connector": "memory"
+	},
 	"LPCE480SQLPRODJDE": {
 		"host": "LPCE480SQLPROD",
 		"port": 1433,
@@ -71,5 +75,30 @@
 				"rejectUnauthorized": false
 			}
 		}]
-  	}
+  	},
+	"ldap.uk.parker.corp": {
+		"name": "ldap.uk.parker.corp",
+		"connector": "ldap",
+		"host": "ldap://QCD480C30.uk.parker.corp:389",
+		"searchBase": "OU=QCD480,OU=QCD,OU=FCG,DC=uk,DC=parker,DC=corp",
+		"port": 389,
+		"user": "QCD480SAJB02@uk.parker.corp",
+		"password": "Le8x2mE",
+		"modelMapping": {
+			"ADUser": {
+				"mapping":{
+					"login": "sAMAccountName",
+					"username": "sAMAccountName",
+					"memberOf": "memberOf",
+					"displayName": "displayName",
+					"email": "mail",
+					"externalId": "sAMAccountName",
+					"id": "sAMAccountName",
+					"objectGUID": "sAMAccountName",
+					"name": "givenName",
+					"familyName": "sn"
+				}
+			}
+		}
+	}
 }

@@ -10,39 +10,38 @@
 		"relations": {
 			"StarterUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
-				"primaryKey": "startername",
-				"property": "displayName"
+				"model": "ADUser",
+				"foreignKey": "username",
+				"primaryKey": "startername"
 			},
 			"ManufacturingUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
+				"model": "ADUser",
+				"foreignKey": "username",
 				"primaryKey": "manufacturingname"
 			},
 			"KonstruktionUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
+				"model": "ADUser",
+				"foreignKey": "username",
 				"primaryKey": "konstruktionname"
 			},
 			"ServiceteamUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
+				"model": "ADUser",
+				"foreignKey": "username",
 				"primaryKey": "serviceteamname"
 			},
 			"PricingUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
+				"model": "ADUser",
+				"foreignKey": "username",
 				"primaryKey": "pricingname"
 			},
 			"ChangedByUser": {
 				"type": "hasOne",
-				"model": "userIdentity",
-				"foreignKey": "externalId",
+				"model": "ADUser",
+				"foreignKey": "username",
 				"primaryKey": "username"
 			},
 			"versionen": {
@@ -449,6 +448,44 @@
 		"MetaData": {
 			"updatedAt": "changed",
 			"changedBy": "username"
+		}
+	},
+	"scopes": {
+		"withAllUserDetails": {
+			"include": [
+				{ 
+					"relation": "StarterUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				}, 
+				{ 
+					"relation": "ManufacturingUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				},
+				{ 
+					"relation": "KonstruktionUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				},
+				{ 
+					"relation": "ServiceteamUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				},
+				{ 
+					"relation": "ChangedByUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				}
+			]
+		},
+		"withBasicUserDetails": {
+			"include": [
+				{ 
+					"relation": "StarterUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				}, 
+				{ 
+					"relation": "ChangedByUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				}
+			]
 		}
 	}
 }

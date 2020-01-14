@@ -18,9 +18,21 @@
       "../node_modules/loopback-ds-timestamp-mixin"
     ]
   },
+  "KerbUser": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ADUser": {
+    "dataSource": "ldap.uk.parker.corp",
+    "public": true
+  },
   "user": {
     "dataSource": "db",
     "allowEternalTokens": false,
+    "options": {
+      "allowEternalTokens": false,
+      "ttl": 86400
+    },
     "public": true
   },
   "accessToken": {
@@ -29,7 +41,7 @@
   },
   "userCredential": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "userIdentity": {
     "dataSource": "db",
@@ -117,6 +129,10 @@
     "public": true
   },
   "ArtikelstammanlageHistorie": {
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "OlympusLabel": {
     "dataSource": "LPCE480SQLPRODJDE",
     "public": true
   }

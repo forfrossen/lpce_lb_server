@@ -22,7 +22,7 @@ module.exports = function ( Artikelstammanlage ) {
 			var currentUser = lbctx && lbctx.get( 'currentUserProfile' );
 			const WebAppsConfig = app.models.WebAppsConfig;
 			const EmailSender = app.models.Email;
-			const Users = app.models.userIdentity;
+			const userCredentialModel = app.models.userCredentialModel;
 
 
 			const data = await Artikelstammanlage.findById(id);
@@ -46,7 +46,7 @@ module.exports = function ( Artikelstammanlage ) {
 			
 			else if( department === 'ProcessEnd') {
 				//console.log('Starter Name: ', data.startername);
-				userInfo = await Users.findOne({where: {'profile.login': data.startername}});
+				userInfo = await userCredentialModel.findOne({where: {'profile.id': data.startername}});
 				//console.log('userInfo: ', userInfo);				
 				Emails.push({'value': userInfo.profile.email});
 				subject = subject + ' - wurde angelegt!';

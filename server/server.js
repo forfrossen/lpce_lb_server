@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 'use strict';
 require('cls-hooked');
 process.env.JWT_SECRET = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
@@ -6,8 +7,8 @@ process.env.cookieSecret = 'ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A';
 //process.env.DEBUG = 'loopback:user,loopback:security:*';
 //process.env.DEBUG = '*';
 
-
 var loopback = require( 'loopback' );
+var debug = require('debug')('server.js');
 var boot = require( 'loopback-boot' );
 var bodyParser = require( 'body-parser' );
 var flash = require( 'express-flash' );
@@ -27,6 +28,8 @@ app.use(errorHandler({
 	log: true,
   }));
 */
+
+
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
@@ -58,20 +61,36 @@ app.middleware('initial:before', (req, res, next) => {
 */
 
 
-
 app.middleware( 'initial:after', loopback.token({
 	model: app.models.accessToken,
-	currentUserLiteral: 'me'
+	currentUserLiteral: 'me',
+  	headers: ['authorization']
 }));
 
 app.middleware( 'parse', bodyParser.json() );
 app.middleware( 'parse', bodyParser.urlencoded( { extended: true } ) );
 
-//app.middleware( 'auth', loopback.token( { model: app.models.accessToken } ) );
+/*
+app.middleware('session:before', cookieParser(app.get('cookieSecret')));
+app.middleware('session', session({
+  secret: app.get('cookieSecret'),
+  saveUninitialized: true,
+  resave: true,
+}));
 
+//app.middleware( 'auth', loopback.token( { model: app.models.accessToken } ) );
 
 /*
 app.middleware( 'session:before', cookieParser( process.env.JWT_SECRET ) );
+app.middleware( 'session', session({
+	secret: process.env.JWT_SECRET,
+	saveUninitialized: true,
+	resave: true,
+}));
+*/
+
+
+/*
 app.middleware( 'session', session( {
 	genid: (req) => {
 		return uuid(); // use UUIDs for session IDs
@@ -83,9 +102,24 @@ app.middleware( 'session', session( {
 	saveUninitialized: true
 } ) );
 */
-/*
-app.middleware('initial:after', function ( req, res, next ) {
 
+/*
+app.middleware('initial:after', async function ( req, res, next ) {
+	const userCredentialModel = app.models.userCredential;		
+	//console.log('userInfo: ', userInfo);		
+
+	let userInfo = await userCredentialModel.findOne({where: {'profile.id': 'MK024480'}});
+	debug('User.profile.mail', userInfo.profile.email);
+	//debug('User: %O', userInfo);
+
+	const ArtAnl = app.models.Artikelstammanlage;
+	let ArtAnlage = await ArtAnl.findById(37, {include: [ 'StarterUser', 'ChangedByUser' ]});
+	debug(' ArtAnlage %O', ArtAnlage);
+
+
+	next();
+	//Emails.push({'value': userInfo.profile.mail});
+})
 	console.log( '\n\n\n===========================================================================' );
 	//console.log( 'Session Secret: ' + process.env.JWT_SECRET );
 	console.log( 'Request received: ', Date.now() );

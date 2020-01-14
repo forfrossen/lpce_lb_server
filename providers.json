@@ -1,12 +1,63 @@
 {
-	"ad": {
+	"negotiate": {
+		"authScheme": "custom",
+		"provider": "negotiate",
+		"module": "passport-negotiate",
+		"authPath": "/auth/negotiate",
+		"ttl": 1000,
+		"session": false,
+		"json": false,
+		"passReqToVerify": true,
+		"verbose": false,
+		"servicePrincipalName": "HTTP@qcd480w04.uk.parker.corp"
+	},
+	"msad": {
+		"provider": "ldap",
+		"authScheme": "ldap",
+		"module": "passport-activedirectory",
+		"authPath": "/auth/msad",
+		"link": true,
+		"json": true,
+		"integrated": true,
+		"session": false,
+		"profileAttributesFromLDAP": {
+			"displayName": "displayName",
+			"sn": "sn",
+			"_groups": "memberOf",
+			"mail": "userPrincipalName",
+			"givenName": "givenName",
+			"id": "sAMAccountName",
+			"cn": "cn",
+			"username": "sAMAccountName"
+		},
+		"ldap": {
+			"url": "ldap://QCD480C30.uk.parker.corp:389",
+			"baseDN": "OU=QCD480,OU=QCD,OU=FCG,DC=uk,DC=parker,DC=corp",
+			"username": "QCD480SAJB02@uk.parker.corp",
+			"password": "Le8x2mE",
+			"attributes": [
+				"dn",
+				"displayName",
+				"givenName",
+				"sn",
+				"title",
+				"userPrincipalName",
+				"memberOf",
+				"sAMAccountName",
+				"mail",
+				"description",
+				"objectGUID",
+				"emails"
+			]
+		}
+	}, "ad": {
 		"provider": "ad",
 		"module": "passport-activedirectory",
 		"authScheme": "ad",
 		"authPath": "/auth/ad",
-		"json": true,
-		"session": true,   
-		"link": true, 
+		"json": false,
+		"session": true,
+		"link": false,
 		"username": "kerbUserId",
 		"profileAttributesFromLDAP": {
 			"login": "sAMAccountName",
@@ -20,31 +71,6 @@
 		"integrated": true,
 		"ldap": {
 			"url": "ldap://QCD480C30.uk.parker.corp:389",
-			"baseDN": "OU=QCD480,OU=QCD,OU=FCG,DC=uk,DC=parker,DC=corp",
-			"username": "QCD480SAJB02@uk.parker.corp",
-			"password": "Le8x2mE"
-		}
-	}, 	"ad-org": {
-		"provider": "ad",
-		"module": "passport-activedirectory",
-		"authType": "ad",
-		"authScheme": "ad",
-		"authPath": "/auth/ad-org",
-		"json": true,
-		"setAccessToken": true,
-		"session": true,   
-		"link": false, 
-		"profileAttributesFromLDAP": {
-			"login": "sAMAccountName",
-			"username": "sAMAccountName",
-			"displayName": "displayName",
-			"email": "mail",
-			"externalId": "sAMAccountName"
-		},
-		"integrated": true,
-		"getUserNameFromHeader": "function( req ) { return req.kerbUserId }",
-		"ldap": {
-			"url": "ldap://TFD044C30.uk.parker.corp:389",
 			"baseDN": "OU=QCD480,OU=QCD,OU=FCG,DC=uk,DC=parker,DC=corp",
 			"username": "QCD480SAJB02@uk.parker.corp",
 			"password": "Le8x2mE"

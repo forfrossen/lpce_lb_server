@@ -1,19 +1,28 @@
+var debug = require('debug')('loopback:getUserInfo');
+
 module.exports = function ( app ) {
 	app.remotes().phases
 		.addBefore( 'invoke', 'options-from-request' )
 		.use( function ( ctx, next ) {
+			debug('Hello from getUserInfo');
+
 			if ( ! ctx.args.options ) {
-				//console.log('ctx.args.options: %O', ctx.args.options)
+				debug('No ctx.args.options: ', ctx.args.options)
 				return next();
 			}
 			if ( ! ctx.args.options.accessToken ) {
-				//console.log('ctx.args.options: %O', ctx.args.options)
+				debug('No Token available! ctx.args.options:', ctx.args.options)
 				return next();
 			}
 			const User = app.models.User;
 			User.findById( ctx.args.options.accessToken.userId, function ( err, user ) {
-				if ( err ) return next( err );
+				if ( err ){
+					debug(err);
+					return next( err );
+				} 
+				debug('user found: ', user)
 				ctx.args.options.currentUser = user;
+				
 				next();
 			} );
 		} );

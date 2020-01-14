@@ -35,13 +35,17 @@
 			"enabled": false
 		}
 	},
+	"session:before": {},
 	"session": {},
-	"auth:before": {
-		"./middleware/auth-kerberos.js": {	}
+	"auth": {
+		"loopback#token": { 
+			"params": {
+                "currentUserLiteral": "me"
+            }
+		}
 	},
-	"auth": { "loopback#token": {}},
 	"auth:after": {
-		"./middleware/store-current-user.js": {	}
+		"./middleware/store-current-user.js": {}
 	},
 	"parse": {},
 	"routes": {

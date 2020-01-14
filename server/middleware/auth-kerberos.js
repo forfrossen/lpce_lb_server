@@ -1,13 +1,16 @@
+var debug = require('debug')('loopback:security:kerbAuth');
+
 module.exports = function () {  
 	return function ( req, res, next ) {
 		var lbctx = require('loopback-context').getCurrentContext({ bind: true });
-/*		
-		console.log( 'KerbAuth Called' );
-		console.log( 'req.kerbUserId : %O', req.kerbUserId  );
-		console.log( 'req.headers.authorization: %O',  req.headers.authorization);
-		console.log( 'req.isAuthenticated(): %O', req.isAuthenticated() );
-		console.log( 'req.accessToken: %O',  req.accessToken);
-*/		
+		
+		debug( 'KerbAuth Called' );
+		debug( 'req.kerbUserId : %O', req.kerbUserId  );
+		debug( 'req.headers.authorization: %O',  req.headers.authorization);
+		debug( 'req.isAuthenticated(): %O', req.isAuthenticated() );
+		debug( 'req.accessToken: %O',  req.accessToken);
+		debug( 'req.user: %O',  req.user);
+		//return next();
 
 
 		const path = require( 'path' );
@@ -18,13 +21,12 @@ module.exports = function () {
 			return next();
 		}
 		//else 
-		//	console.log( 'No Token! Req: %O', req.headers.authorization );	
+		//	debug( 'No Token! Req: %O', req.headers.authorization );	
 
 		if ( req.kerbUserId ) {
 			kerbAuthNeeded = false;
 			return next();
 		} else {
-
 			if ( req.headers.authorization ) {
 				var authHeader = req.headers.authorization;
 
@@ -41,6 +43,8 @@ module.exports = function () {
 
 			// If req.isAuthenticated() is true, Kerberos Auth can be skipped, Loopback will handle req auth
 			if ( req.isAuthenticated() ) {
+				debug('Skipping Kerberos Auth, isAuthenticated=true!');
+				//req.kerbUserId = req.user.username.replace('ad.', '');
 				kerbAuthNeeded = false;
 				return next();
 			}
@@ -56,7 +60,7 @@ module.exports = function () {
 				kerbAuthNeeded = false;
 				return next();
 			}
-			//console.log('req.path.includes(assets): ' + req.path.includes('assets'))
+			//debug('req.path.includes(assets): ' + req.path.includes('assets'))
 			// If request is for static file from the  client directory, skip authentification
 			if ( req.path.includes('assets')) {
 				kerbAuthNeeded = false;
@@ -68,17 +72,24 @@ module.exports = function () {
 				return next();
 			}
 
+			if ( req.path.includes('negotiate')) {
+				kerbAuthNeeded = false;
+				return next();
+			}
+			
+			debug( 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' + kerbAuthNeeded);	
+
 			if ( !kerbAuthNeeded ) {
-				console.log( 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' + kerbAuthNeeded);	
+				debug( 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' + kerbAuthNeeded);	
 				return next();
 			} else {
 
 				if ( !req.headers.authorization ) {
-					// console.log( 'No Kerberos Ticket in header, no auth header present!');
+					// debug( 'No Kerberos Ticket in header, no auth header present!');
 					return res.status( 401 ).set( 'WWW-Authenticate', 'Negotiate' ).end();
 
 				} else {
-					//console.log( '=X=' );
+					debug( '=X=' );
 					req.authHeader = req.authHeader || {};
 					req.authHeader.token = authHeader.substring( 'Negotiate '.length );
 
@@ -98,12 +109,13 @@ module.exports = function () {
 								console.error( 'server.step ERROR: %O', err );
 								return next( err );
 							}
-							//console.log( 'server.step RESPONSE: %O', serverResponse );
-							//console.log( 'server.username: ', server.username )
+							debug( 'server.step RESPONSE: %O', serverResponse );
+							debug( 'server.username: ', server.username )
 							var userid = server.username ;
 							userid = userid.replace( /@UK.PARKER.CORP/gi, "" );
 							userid = userid.replace( /@US.PARKER.CORP/gi, "" );
 							req.kerbUserId = userid;
+							req.headers['x-iisnode-logon_user'] = 'UKPHC\\' + userid;
 							return next();
 						});
 					});
