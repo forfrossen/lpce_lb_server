@@ -25,4 +25,13 @@ module.exports = function ( Workorder ) {
 	Workorder.disableRemoteMethodByName( 'prototype.__updateById__accessTokens' );
 	Workorder.disableRemoteMethodByName( 'createChangeStream' );
 	*/
+
+	Workorder.observe('access', function(ctx, next) {
+    	if(ctx.query.where && ctx.query.where.wadoco.toString().startsWith('WO')){
+			console.log('Context: %O ', ctx.query.where);
+    		console.log('Workorder API Triggered! Search Value from Frontend: ', ctx.query.where);
+			ctx.query.where.wadoco = ctx.query.where.wadoco.replace("WO", "");
+		}
+    	next();
+  	});
 }

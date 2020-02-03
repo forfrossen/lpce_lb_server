@@ -36,7 +36,7 @@
     "loopback-boot": "^2.27.1",
     "loopback-component-explorer": "^6.3.1",
     "loopback-component-passport": "^3.11.0",
-    "loopback-connector-ldap": "^2.0.27",
+    "loopback-connector-ldap": "=2.0.27",
     "loopback-connector-mssql": "^3.3.0",
     "loopback-connector-oracle": "^4.1.2",
     "loopback-connector-sendmail": "0.0.2",

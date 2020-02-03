@@ -111,8 +111,12 @@ module.exports = function ( app ) {
 					debug( '\n\n\n user: %O', user );
 					debug( '\n\n\n identity: %O', identity );
 					debug( '\n\n\n token: %O', token );
+					
+					//delete user;
 
-					if( 'id' in user) deleteExpiredTokens(user.id);
+					if ( ! user ) done('No user in Login Callback!');
+
+					if( user && 'id' in user ) deleteExpiredTokens(user.id);
 
 					
 					var authInfo = {
