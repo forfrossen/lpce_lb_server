@@ -44,9 +44,6 @@
             }
 		}
 	},
-	"auth:after": {
-		"./middleware/store-current-user.js": {}
-	},
 	"parse": {},
 	"routes": {
 		"loopback#rest": {

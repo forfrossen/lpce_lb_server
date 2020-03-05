@@ -2,8 +2,9 @@
 	"name": "user",
 	"plural": "users",
 	"base": "User",
-	"idInjection": true,
-	"properties": {},
+	"idInjection": false,
+	"properties": {
+	},
 	"validations": [],
 	"relations": {
 		"accessTokens": {
@@ -45,7 +46,8 @@
 					"fields": [
 						"displayName",
 						"email",
-						"memberOf"
+						"memberOf",
+						"*"
 					]
 				}
 			}

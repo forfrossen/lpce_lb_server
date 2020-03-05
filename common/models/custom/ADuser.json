@@ -1,3 +1,17 @@
 {
-	"name": "ADUser"
+	"name": "ADUser",
+	"properties": {
+		"login": {
+			"type": "String"
+		},
+		"username": {
+			"type": "String"
+		},
+		"displayName": {
+			"type": "String"
+		},
+		"email": {
+			"type": "String"
+		}
+	}
 }

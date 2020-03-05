@@ -93,9 +93,10 @@ module.exports = function ( app ) {
 			
 			debug('Negotiate verifyMethod');
 
-			var userid = details.replace( /@UK.PARKER.CORP/gi, "" ).replace( /@US.PARKER.CORP/gi, "" );
+			var userid = details.toString().replace( /@UK.PARKER.CORP/gi, "" ).replace( /@US.PARKER.CORP/gi, "" );
+
 			var user = {
-				id: userid,
+				id: userid.toString(),
 				username: userid,
 				email: userid + '@parker.com'
 			};
@@ -139,10 +140,6 @@ module.exports = function ( app ) {
 				profileMapping: [
 					{
 						userField: "username",
-						providerField: "id"
-					},
-					{
-						userField: "id",
 						providerField: "id"
 					},
 					{

@@ -5,7 +5,7 @@
     "idInjection": false,
     "mssql": {
       "schema": "dbo",
-      "table": "workorders"
+      "table": "F4801"
     },
     "relations": {},
     "remoting": {
