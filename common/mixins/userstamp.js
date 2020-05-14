@@ -41,8 +41,9 @@ module.exports = function ( Model, options ) {
 
 	Model.observe( 'before save', function event( ctx, next ) {
 	
-		var lbctx = LoopBackContext.getCurrentContext();
-		var currentUser = lbctx && lbctx.get( 'currentUser' ) ;
+		/*var lbctx = LoopBackContext.getCurrentContext();
+		var currentUser = lbctx && lbctx.get( 'currentUser' ) ;*/
+		var currentUser = ctx.options.currentUser.username;
 
 		debug( 'ctx.options', ctx.options );
 

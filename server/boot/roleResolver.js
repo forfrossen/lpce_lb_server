@@ -1,130 +1,95 @@
+
+var debug = require('debug')('loopback:security:roleResolver');
+
 module.exports = function ( app ) {
-	var Role = app.models.Role;
+
+	const Role 			= app.models.Role;
+	const userModel 	= app.models.user;
+
+	Role.registerResolver( 'ITmember', async ( role, context ) => {
+		return await dynamicRoleChecker( 'QCD480GGIt', context );
+	});
+
+	Role.registerResolver( 'GGUsers', async ( role, context ) => {
+		return await dynamicRoleChecker( 'QCD480GGUsers', context );
+	});
+
+	Role.registerResolver( 'WebAppReader', async ( role, context ) => {	
+		return await dynamicRoleChecker( 'READER', context );
+	});
+
+	Role.registerResolver( 'WebAppWriter', async ( role, context ) => {			
+		return await dynamicRoleChecker( 'WRITER', context );
+	});
+
 	
-	
-	console.log("\n\n\n\n\n roleResolver check! \n\n\n\n\n");
 
-	Role.registerResolver( 'ITmember', function ( role, context, cb ) {
-		var WebApp = context.modelName;
+	async function dynamicRoleChecker( role, context ) {
 		
-		console.log("\n\n\n\n\n IT ADMIN CHECK \n\n\n\n\n");
-		
-		//Q: Is the user logged in? (there will be an accessToken with an ID if so)
-		var userId = context.accessToken.userId;
-		if ( !userId ) {
-			//A: No, user is NOT logged in: callback with FALSE
-			return process.nextTick( () => cb( null, false ) );
+		try{
+			
+			let isMember = false;
+			let WebApp = context.modelName;
+			
+			debug ('dynamicRoleChecker for ROLE ', role, 'and Webapp: ', WebApp);
+			
+			let userId = context.accessToken.userId;
+			if ( ! userId ) throw new Error ('No UserID available!' );
+			
+			let userProfile = await userModel.findById( userId, { include: 'ADProfile' });
+			if ( ! userProfile ) throw new Error( 'no profile found!' );
+
+			let userGroups 		= userProfile.Roles;
+			let groupToCheck 	= '';
+
+			switch ( WebApp ){
+				case 'OpenOrders':
+					groupToCheck = 'QCD480GG_WEB_OpenOrders';
+					break;
+				case 'OpenOrdersComment':
+					groupToCheck = 'QCD480GG_WEB_OpenOrders';
+					break;
+				case 'Artikelstammanlage':
+					groupToCheck = 'QCD480GG_WEB_Artikelstammanlage';
+					break;
+				case 'ArtikelstammanlageHistorie':
+					groupToCheck = 'QCD480GG_WEB_Artikelstammanlage';
+					break;
+				default:
+					groupToCheck = 'QCD480GG_WEB_' + WebApp;
+					if( role === 'READER') groupToCheck += '_READ';
+					if( role === 'WRITER') groupToCheck += '_WRITE';
+					break;
+			}
+
+			if ( role !== 'READER' && role !== 'WRITER' ) {
+				groupToCheck = role;
+			}
+
+			
+			if( userGroups.indexOf( groupToCheck ) !== -1 ) isMember = true;
+
+			debug( '\n' );
+			debug( '===========================================================' );
+			debug( 'Dynamic Role Checker' );
+			debug( 'WebApp:...............', 	WebApp );
+			debug( 'Role:.................', 	role );
+			debug( 'groupToCheck..........', 	groupToCheck );
+			debug( 'User:.................', 	userProfile.username );
+			//debug( 'userGroups:............',	userGroups );
+			debug( 'is Member:............',	isMember );
+			debug( 'indexOf:..............',	userGroups.indexOf( groupToCheck ) );
+			debug( '===========================================================' );
+			debug( '\n' );
+
+			//debug( 'userProfile.Roles: ', userProfile.Roles );
+
+			if( isMember ) return true;				
+			
+		} catch(e) {
+			debug('\t Error: ', e.message);
 		}
 
-		var userIdentity = app.models.userIdentity;
-		userIdentity.findById( userId, function ( err, profile ) {
-			if ( err ) return cb( err );
-			if ( !profile ) return cb( new Error( "profile not found" ) );
-
-			var userGroups = profile.profile._groups
-
-			console.log('User Groups: %O', userGroups);
-			
-			if ( userGroups.indexOf( 'QCD480GGIT' ) ) return cb( null, true );
-			else return cb(null, false);
-		})
-
-	} );
-
-	Role.registerResolver( 'GGUsers', function ( role, context, cb ) {
-		var WebApp = context.modelName;
-		console.log("\n\n\n\n\n GG USERS CHECK \n\n\n\n\n");
-		//Q: Is the user logged in? (there will be an accessToken with an ID if so)
-		var userId = context.accessToken.userId;
-		if ( !userId ) {
-			//A: No, user is NOT logged in: callback with FALSE
-			return process.nextTick( () => cb( null, false ) );
-		}
-
-		var userIdentity = app.models.userIdentity;
-		userIdentity.findById( userId, function ( err, profile ) {
-			if ( err ) return cb( err );
-			if ( !profile ) return cb( new Error( "profile not found" ) );
-
-			var userGroups = profile.profile._groups
-
-			console.log('User Groups: %O', userGroups);
-			
-			if ( userGroups.indexOf( 'QCD480GGUsers' ) ) return cb( null, true );
-			else return cb(null, false);
-		})
-
-	} );
-
-	Role.registerResolver( 'WebAppReader', function ( role, context, cb ) {
-		var WebApp = context.modelName;
-
-		console.log ('WebApp: %O', WebApp);
-
-		//Q: Is the user logged in? (there will be an accessToken with an ID if so)
-		var userId = context.accessToken.userId;
-
-		if ( !userId ) {
-			//A: No, user is NOT logged in: callback with FALSE
-			return process.nextTick( () => cb( null, false ) );
-		}
-
-		var userIdentity = app.models.userIdentity;
-		userIdentity.findById( userId, function ( err, profile ) {
-			if ( err ) return cb( err );
-			if ( !profile ) return cb( new Error( "profile not found" ) );
-
-			var userGroups = profile.profile._groups
-
-			var ADWebAppReaderGroup = 'QCD480GG_WEB_' + WebApp.toUpperCase(); + '_READ';
-
-			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment')
-				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders';
-
-			if ( WebApp === 'Artikelstammanlage' || WebApp === 'ArtikelstammanlageHistorie' )
-				ADWebAppReaderGroup = 'QCD480GG_WEB_Artikelstammanlage';
-			
-			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
-
-			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
-			else return cb(null, false);
-		})
-
-	} );
-
-	Role.registerResolver( 'WebAppWriter', function ( role, context, cb ) {
-		var WebApp = context.modelName;
-
-		console.log ('WebApp: %O', WebApp);
-
-
-		//Q: Is the user logged in? (there will be an accessToken with an ID if so)
-		var userId = context.accessToken.userId;
-		if ( !userId ) {
-			//A: No, user is NOT logged in: callback with FALSE
-			return process.nextTick( () => cb( null, false ) );
-		}
-
-		var userIdentity = app.models.userIdentity;
-		userIdentity.findById( userId, function ( err, profile ) {
-			if ( err ) return cb( err );
-			if ( !profile ) return cb( new Error( "profile not found" ) );
-
-			var userGroups = profile.profile._groups
-
-			var ADWebAppReaderGroup = 'QCD480GG_WEB_' + WebApp.toUpperCase() + '_WRITE';
-			
-			if ( WebApp === 'OpenOrders' || WebApp === 'OpenOrdersComment' )
-				ADWebAppReaderGroup = 'QCD480GG_WEB_OpenOrders'
-
-			if ( WebApp === 'Artikelstammanlage' || WebApp === 'ArtikelstammanlageHistorie' )
-				ADWebAppReaderGroup = 'QCD480GG_WEB_Artikelstammanlage'
-			
-			//console.log( 'user: ' + profile.profile.uid + ' member of ' + ADWebAppReaderGroup + ' true if >0: ' + userGroups.indexOf( ADWebAppReaderGroup ) );
-
-			if ( userGroups.indexOf( ADWebAppReaderGroup ) ) return cb( null, true );
-			else return cb(null, false);
-		})
-
-	} );
+		return false;
+	}
 };

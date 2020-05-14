@@ -1,0 +1,105 @@
+{
+  "name": "F41092",
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "F41092"
+    },
+    "relations": {
+	}
+  },
+  "properties": {
+	"id": false,
+    "t2itm": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 8,
+      "scale": 0,
+      "mssql": {
+        "columnName": "T2ITM",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 8,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "t2mcu": {
+      "type": "String",
+      "required": true,
+      "length": 12,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "T2MCU",
+        "dataType": "nvarchar",
+        "dataLength": 12,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "t2ky": {
+      "type": "String",
+      "required": true,
+      "length": 10,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "T2KY",
+        "dataType": "nvarchar",
+        "dataLength": 10,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "t2tydb": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "T2TYDB",
+        "dataType": "nvarchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "t2amtu": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 15,
+      "scale": 0,
+      "mssql": {
+        "columnName": "T2AMTU",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 15,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "t2litm": {
+      "type": "String",
+      "required": false,
+      "length": 25,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "T2LITM",
+        "dataType": "nvarchar",
+        "dataLength": 25,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

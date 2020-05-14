@@ -7,7 +7,14 @@
       "schema": "dbo",
       "table": "Teileinfo-neu"
     },
-    "relations": {}
+    "relations": {
+		"items": {
+			"type": "hasOne",
+			"model": "Item",
+			"foreignKey": "iblitm",
+			"primaryKey": "litm"
+		}
+	}
   },
   "properties": {
     "id": {
@@ -72,6 +79,21 @@
         "nullable": "YES"
       }
     },
+	"userAllg": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "user_allg",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
     "teileinfoSek": {
       "type": "String",
       "required": false,
@@ -97,6 +119,21 @@
         "columnName": "date_sek",
         "dataType": "datetime",
         "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+	"userSek": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "user_sek",
+        "dataType": "varchar",
+        "dataLength": 255,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "YES"
@@ -147,6 +184,21 @@
         "nullable": "YES"
       }
     },
+    "modified by": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "Modified By",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
     "created by": {
       "type": "String",
       "required": false,
@@ -162,6 +214,19 @@
         "nullable": "YES"
       }
     }
+  },
+  "scope": {
+		"include": [
+			{
+				"relation": "items",
+				"scope": {
+					"fields": [ "ibanpl", "ibmcu", "iblitm" ],
+					"where": { "ibmcu": "        5839" }
+				}
+			}
+		],
+		"order": "modified desc, created desc",
+		"limit": 100000
   },
   "validations": [],
   "relations": {},

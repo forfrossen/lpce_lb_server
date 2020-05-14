@@ -10,12 +10,14 @@
       "../node_modules/loopback-component-passport/lib/models"
     ],
     "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
       "./mixins",
       "../common/mixins",
-      "../node_modules/loopback-setup-remote-methods-mixin",
-      "../node_modules/loopback-ds-timestamp-mixin"
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../node_modules/loopback-ds-computed-mixin/lib",
+      "../node_modules/loopback-ds-calculated-mixin/lib",
+      "../node_modules/loopback-setup-remote-methods-mixin"
     ]
   },
   "KerbUser": {
@@ -134,6 +136,34 @@
   },
   "OlympusLabel": {
     "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "F4311": {
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "F4801": {
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "Fremdarbeit": {
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "F41092": {
+    "dataSource": "LPCE480SQLPRODJDE",
+    "public": true
+  },
+  "WebAppsMenu": {
+    "dataSource": "LPCE480SQLPRODMISC",
+    "public": true
+  },
+  "WebAppsACL": {
+    "dataSource": "LPCE480SQLPRODMISC",
+    "public": true
+  },
+  "WebAppsACLDetails": {
+    "dataSource": "LPCE480SQLPRODMISC",
     "public": true
   }
 }

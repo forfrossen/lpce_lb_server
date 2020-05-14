@@ -1,0 +1,145 @@
+{
+	"name": "Fremdarbeit",
+	"strict": true,
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "vFremdarbeit"
+		},
+		"relations": {
+			"wo": {
+				"type": "belongsTo",
+				"model": "F4801",
+				"primaryKey": "fremdarbeitId",
+				"foreignKey": "auftragsline"
+			}
+		}
+	},
+	"properties": {
+		"id": false,
+		"auftrag": {
+			"type": "String",
+			"required": true,
+			"length": 8,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Auftrag",
+				"dataType": "nvarchar",
+				"dataLength": 8,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"kostenstelle": {
+			"type": "String",
+			"required": false,
+			"length": 12,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Kostenstelle",
+				"dataType": "nvarchar",
+				"dataLength": 12,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"datum": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "Datum",
+				"dataType": "datetime",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"wlopsq": {
+			"type": "Number",
+			"required": false,
+			"length": null,
+			"precision": 10,
+			"scale": 0,
+			"mssql": {
+				"columnName": "WLOPSQ",
+				"dataType": "int",
+				"dataLength": null,
+				"dataPrecision": 10,
+				"dataScale": 0,
+				"nullable": "YES"
+			}
+		},
+		"menge": {
+			"type": "Number",
+			"required": false,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "Menge",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"auftragsline": {
+			"type": "String",
+			"required": false,
+			"length": 12,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "auftragsline",
+				"dataType": "nvarchar",
+				"dataLength": 12,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	},
+	"scope":{
+		"include": [
+			{
+				"relation": "wo",
+				"scope": { 
+					"fields": [ "wadoco", "wamcu", "wlrorn", "waitm", "walitm", "wlrlln", "wauorg", "fremdarbeitID", "purchaseorderID" ],
+					"where": { 
+						"and": [
+							{ "wamcu": 					{ "eq"	: "        5839"  	}},
+							{ "wlrorn": 				{ "neq"	: ""   				}}
+						]
+					},
+					"include": [
+						{
+							"relation": "po",
+							"scope": {
+								"fields": 	[ "pddoco", "pddcto", "pdan8", "pdan801" ],
+								"where": 	{ "pddcto": { "eq"	: "OO" }}
+							}
+						}
+					]
+				}
+			}
+
+		],
+		"where": { 
+			"and": [
+				{ "wo.wadoco": 			{ "gt": 0 }}
+			]
+		},
+		"order": "datum desc",
+		"limit": 100
+	}
+}

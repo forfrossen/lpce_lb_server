@@ -20,7 +20,7 @@ module.exports = function ( app ) {
 					debug(err);
 					return next( err );
 				} 
-				debug('user found: ', user)
+				debug('user found: ', user.username)
 				ctx.args.options.currentUser = user;
 				
 				next();

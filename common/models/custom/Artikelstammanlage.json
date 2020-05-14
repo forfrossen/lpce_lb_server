@@ -450,6 +450,34 @@
 			"changedBy": "username"
 		}
 	},
+	"scope": {
+		"include": [
+			{ 
+				"relation": "StarterUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			}, 
+			{ 
+				"relation": "ManufacturingUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			},
+			{ 
+				"relation": "KonstruktionUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			},
+			{ 
+				"relation": "ServiceteamUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			},
+			{ 
+				"relation": "PricingUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			},			
+			{ 
+				"relation": "ChangedByUser",
+				"scope":  { "fields": ["displayName", "email"] }
+			}
+		]
+	},
 	"scopes": {
 		"withAllUserDetails": {
 			"include": [
@@ -470,6 +498,10 @@
 					"scope":  { "fields": ["displayName", "email"] }
 				},
 				{ 
+					"relation": "PricingUser",
+					"scope":  { "fields": ["displayName", "email"] }
+				},
+				{ 
 					"relation": "ChangedByUser",
 					"scope":  { "fields": ["displayName", "email"] }
 				}
@@ -487,5 +519,43 @@
 				}
 			]
 		}
-	}
+	},
+	"acls": [
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "ITmember",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "GGUsers",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "$authenticated",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "READ",
+			"principalType": "ROLE",
+			"principalId": "WebAppReader",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "WRITE",
+			"principalType": "ROLE",
+			"principalId": "WebAppWriter",
+			"permission": "ALLOW"
+		},
+		{
+			"accessType": "*",
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "DENY"
+		}
+  ]
 }

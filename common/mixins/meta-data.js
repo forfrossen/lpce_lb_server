@@ -11,7 +11,7 @@ var _extends = Object.assign || function ( target ) { for ( var i = 1; i < argum
 
 module.exports = function ( Model, options ) {
 	
-	console.log( "Hello from mixin");
+	//console.log( "Hello from mixin");
 
     var options = _extends( {
         createdAt: "created",
@@ -22,9 +22,11 @@ module.exports = function ( Model, options ) {
     
     Model.observe( 'before save', function event( ctx, next ) {
     //Model.beforeRemote('*.save', function event(ctx, unused, next) { 
-	
+		/*
 		var lbctx = LoopBackContext.getCurrentContext();
 		var currentUser = lbctx && lbctx.get( 'currentUser' ) ;
+		*/
+		var currentUser = ctx.options.currentUser.username;
 
 		if ( ctx.isNewInstance ) {
 			ctx.instance[ options.createdBy ] = currentUser;

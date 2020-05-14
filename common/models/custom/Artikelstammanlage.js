@@ -1,37 +1,34 @@
-
-const debugArtikelstammanlage = false;
+var debug = require('debug')('loopback:models:Artikelstammanlage');
+const debugArtikelstammanlage = true;
 const app = require('../../../server/server.js');
-//var UserIdentity 	= app.models.UserIdentity;
-var LoopBackContext = require('loopback-context');
 
 module.exports = function ( Artikelstammanlage ) {
 
-	const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
-
-
 	Artikelstammanlage.remoteMethod(
 		'sendNotification', {
-			accepts: 	[{ arg: 'id', type: 'number', required: true}, {arg: 'department', type: 'string'}, ],
+			accepts: 	[
+				{ arg: 'id', type: 'number', required: true}, 
+				{ arg: 'department', type: 'string'},
+				{ arg: 'options', type: 'object', http: 'optionsFromRequest'}
+			],
 			http: 		{  path: '/:id/sendNotification', verb: 'post', status: 201, errorStatus: 400},
 			returns: 	{  arg: 'outcome', type: 'Boolean' }
 		});
 
-	Artikelstammanlage.sendNotification = async function(id, department) {
+	Artikelstammanlage.sendNotification = async function(id, department, options) {
 			
-			var lbctx = require('loopback-context').getCurrentContext({ bind: true });
-			var currentUser = lbctx && lbctx.get( 'currentUserProfile' );
 			const WebAppsConfig = app.models.WebAppsConfig;
 			const EmailSender = app.models.Email;
-			const userCredentialModel = app.models.userCredentialModel;
+			//const userCredentialModel = app.models.userCredentialModel;
+			const ADUserModel = app.models.ADUser;
 
 
 			const data = await Artikelstammanlage.findById(id);
 			
-			// console.log( 'Await findone: ', data);
-			// console.log('Sending Emails to Department: %s', department);
-			
-			//console.log('ID: ', id);
-			//console.log('data: ', data);
+			debug( 'Await findone: ', data );
+			debug( 'Sending Emails to Department: %s', department );
+			debug( 'ID: ', id );
+			debug( 'data: ', data );
 			
 			let subject = 	'Artikelstammanlage - "' + data.artikelnummer + '"';
 			let html = 		'<h2>Bitte folgende Artikelstammanlage bearbeiten:</h2>'
@@ -45,10 +42,10 @@ module.exports = function ( Artikelstammanlage ) {
 			} 
 			
 			else if( department === 'ProcessEnd') {
-				//console.log('Starter Name: ', data.startername);
-				userInfo = await userCredentialModel.findOne({where: {'profile.id': data.startername}});
-				//console.log('userInfo: ', userInfo);				
-				Emails.push({'value': userInfo.profile.email});
+				debug('Starter Name: ', data.startername);
+				userInfo = await ADUserModel.findOne({where: {'username': data.startername}});
+				debug('userInfo: ', userInfo);
+				Emails.push({'value': userInfo.email});
 				subject = subject + ' - wurde angelegt!';
 				html = 		'<h2>Der folgende Artikel hat den Anlage-Prozess komplett durchlaufen:</h2>';
 			}
@@ -61,7 +58,18 @@ module.exports = function ( Artikelstammanlage ) {
 				throw error;
 			}
 
-			let baseurl = (app.get('port') === 3001) ? 'http://lpce480webapps:3001' : 'http://lpce480webapps';
+			
+			debug('Server Port: ', app.get('port'));
+			
+			let baseurl = '';
+			if (app.get('port') === 3001){
+				debug('Server is in development mode. Email to markus.kristen@parker.com');
+				toArray = [ 'markus.kristen@parker.com' ];
+				baseurl = 'http://lpce480webapps:3001';
+			}
+			else{
+				baseurl = 'http://lpce480webapps';
+			}
 
 			html = html + 	
 				'</br>Artikelnummer:&emsp;&emsp;<a href="' + baseurl + '"/#/pages/artikelstammanlage/anlageformular/' + data.id + '" >' + data.artikelnummer + '</a>' +
@@ -70,7 +78,7 @@ module.exports = function ( Artikelstammanlage ) {
 			
 			let emailAdresses = Emails.map(Email => Email.value);
 			
-			//console.log('All Emails found: %o', emailAdresses)
+			debug('All Emails found: %o', emailAdresses)
 			
 			let sendEmails = () => {
 				return new Promise((resolve, reject) => {
@@ -82,7 +90,7 @@ module.exports = function ( Artikelstammanlage ) {
 						html: 		html
 					}, (err, info, response) => {
 						if (err) reject(err);
-						console.log('email sentt to: %o', info);
+						debug('email sentt to: %o', info);
 						resolve(info);
 					})});
 			}
@@ -100,11 +108,6 @@ module.exports = function ( Artikelstammanlage ) {
 			}
 
 	} 
-	//Artikelstammanlage.hasOne( UserIdentity, { foreignKey: 'external', as: 'starter'} );
-
-
-	//Artikelstammanlage.nestRemoting('version');
-	//Artikelstammanlage.versions.create({});
 
     Artikelstammanlage.validatesPresenceOf( 	'artikelnummer' );
 	Artikelstammanlage.validatesNumericalityOf( 'identnummer',      	   { allowBlank: true, allowNull: true, message: { number: 'is not a number'}} );
@@ -117,61 +120,32 @@ module.exports = function ( Artikelstammanlage ) {
 
 	Artikelstammanlage.observe( 'before save', function ( ctx, next ) {
 
-		var lbctx = LoopBackContext.getCurrentContext();
-
-
-		var currentUserProfile = lbctx && lbctx.get( 'currentUserProfile' );
-		var currentUser = lbctx && lbctx.get( 'currentUser' );
-		
-		/*
-		console.log( 'CurrentUser:', currentUser );
-		console.log( 'ctx.options:', ctx.options );
-		console.log( 'CurrentUserId:', ctx.options.currentUser.id );
-		*/
-
-		if ( debugArtikelstammanlage ) console.log( 'About to save following insance:\n %O', ctx.instance );
+		var currentUser = ctx.options.currentUser.username;
+		debug( 'CurrentUser:', currentUser );
 
 		if ( ctx.isNewInstance ) {
 			ctx.instance.startername = currentUser;
             ctx.instance.starterdatum = new Date();
-		} else {
-			
-			/*
-			var to 				= 'markus.kristen@parker.com';
-			var id				= ctx.data.aaId;
-			var artikelnummer	= ctx.data.artikelnummer;
-			*/
-
-			// var nextDepartment  = ''
-
+		} else {			
             if ( ctx.data.startername === 'THISWASME' ){
                 ctx.data.startername 	= currentUser;
                 ctx.data.starterdatum 	= new Date();
-				// nextDepartment			= 'Manufacturing';
             } else if ( ctx.data.manufacturingname === 'THISWASME' ){
                 ctx.data.manufacturingname = currentUser;
                 ctx.data.manufacturingdatum = new Date();
-				// nextDepartment			= 'Konstruktion';
             } else if ( ctx.data.konstruktionname === 'THISWASME' ){
                 ctx.data.konstruktionname = currentUser;
                 ctx.data.konstruktiondatum = new Date();
-				// nextDepartment			= 'ServiceTeam';
             } else if ( ctx.data.serviceteamname === 'THISWASME' ){
                 ctx.data.serviceteamname = currentUser;
                 ctx.data.serviceteamdatum = new Date();
-				// nextDepartment			= 'Pricing';
             } else if ( ctx.data.pricingname === 'THISWASME' ){
                 ctx.data.pricingname = currentUser;
                 ctx.data.pricingdatum = new Date();
-				// nextDepartment			= 'Starter';
             }
+		}	
 
-			// Artikelstammanlage.sendEmail(nextDepartment, ctx.data);
-		}
-
-		
-
-		if ( debugArtikelstammanlage ) console.log( '\n> before save triggered for %O: \n %O', ctx.Model.modelName, ctx.instance || ctx.data );
+		debug( '\n> before save triggered for %O: \n %O', ctx.Model.modelName, ctx.instance || ctx.data );
 
 		return next();
 	} );
@@ -180,8 +154,7 @@ module.exports = function ( Artikelstammanlage ) {
 	// Nach dem Speichern eine neue HISTORY Version anlagen
 	Artikelstammanlage.observe( 'after save', function ( ctx, next ) {
 
-		var lbctx = require('loopback-context').getCurrentContext({ bind: true });
-		var currentUser = lbctx && lbctx.get( 'currentUser' );
+		var currentUser = ctx.options.currentUser.username;
 
 		if (ctx.instance) {
 			
@@ -191,45 +164,56 @@ module.exports = function ( Artikelstammanlage ) {
 			const AAVersion = JSON.parse(JSON.stringify(ctx.instance));
 			delete AAVersion.aaId;
 			
-			//console.log("AAVersion: %O", AAVersion);
+			//debug("AAVersion: %O", AAVersion);
 			
 			ctx.instance.versionen.create(AAVersion, function(err, data) {
-				if (err) console.log ('error: %O', err)
+				if (err) debug ('error: %O', err)
 
 				else {
-					if ( debugArtikelstammanlage ) console.log ('Success: %O', data)
+					if ( debugArtikelstammanlage ) debug ('Success: %O', data)
 				}
 			});
 
-			//console.log('Upated the following: %o', ctx.instance);
-			if ( debugArtikelstammanlage ) console.log('Saved %s#%s \n\n\n %o', ctx.Model.modelName, ctx.instance.aaId,  ctx.instance);
+			debug('Upated the following: %o', ctx.instance);
+			debug('Saved %s#%s \n\n\n %o', ctx.Model.modelName, ctx.instance.aaId,  ctx.instance);
   		} 
 		
 		return next();
 	})
 
 	function errorHandler(e) {
-		console.log (e);
+		debug (e);
 	}
 
-
+/*
 	Artikelstammanlage.sendEmail = function(department, data ) {
 		var lbctx = require('loopback-context').getCurrentContext({ bind: true });
 		var currentUser = lbctx && lbctx.get( 'currentUserProfile' );
 		const WebAppsConfig = app.models.WebAppsConfig;
 		var toArray = [];
 
-		console.log('department: %s', department);
+		debug('department: %s', department);
 
 		if (department === 'Starter') {
-			toArray.push('markus.kristen@parker.com');
+			//toArray.push('markus.kristen@parker.com');
 			toArray.push('daniel.zahn@parker.com');
 		} else {
 			WebAppsConfig.ArtikelstammanlageEmails({where: {name: department}}, function(err, Emails) {
-				//console.log('All Emails found: %o', Emails)
+
+				debug('All Emails found: %o', Emails)
+
 				Emails.forEach(Email => {
-					//console.log('One Email found: %o', Email)
-					toArray.push(Email.value)
+
+					debug('One Email found: %o', Email);
+					debug('Server Port: ', app.get('port'));
+					
+					if (app.get('port') === 3001){
+						toArray.push('markus.kristen@parker.com');
+						debug('Server is in developmode. Email to markus.kristen@parker.com');
+					}
+					else
+						toArray.push(Email.value)
+
 					Artikelstammanlage.app.models.Email.send({
 						// to: 'markus.kristen@parker.com', //Email.value
 						to: 		Email.value,
@@ -240,14 +224,15 @@ module.exports = function ( Artikelstammanlage ) {
 									'</br>RFQ-Nummer:&emsp;&emsp;' + data.rfqnr +
 									'</br>Kunde:&emsp;&emsp;&emsp;&emsp;&emsp;' + data.Kunde
 					}, function(err, mail) {
-						console.log('email sentt to: %o', mail.accepted);
+						debug('email sentt to: %o', mail.accepted);
 						if(err) return err;
 					});
 				});
-				//console.log('Emails only found: %o', toArray)
+				debug('Emails only found: %o', toArray)
 			})
 		}	
 		
 	}
+*/
 
 }

@@ -3,41 +3,11 @@ const debugOpenOrderComment = true;
 
 module.exports = function ( OpenOrderComment ) {
 
-	// Disabling all methods but create 
-	/*
-	OpenOrderComment.disableRemoteMethodByName( 'deleteById' );
-	OpenOrderComment.disableRemoteMethodByName( 'upsert' );
-	OpenOrderComment.disableRemoteMethodByName( 'updateAll' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.updateAttributes' );
-	OpenOrderComment.disableRemoteMethodByName( 'find' );
-	OpenOrderComment.disableRemoteMethodByName( 'findById' );
-	OpenOrderComment.disableRemoteMethodByName( 'findOne' );
-	OpenOrderComment.disableRemoteMethodByName( 'deleteById' );
-	OpenOrderComment.disableRemoteMethodByName( 'confirm' );
-	OpenOrderComment.disableRemoteMethodByName( 'count' );
-	OpenOrderComment.disableRemoteMethodByName( 'exists' );
-	OpenOrderComment.disableRemoteMethodByName( 'resetPassword' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__count__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__create__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__delete__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__destroyById__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__findById__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__get__accessTokens' );
-	OpenOrderComment.disableRemoteMethodByName( 'prototype.__updateById__accessTokens' );
-
-	OpenOrderComment.validatesPresenceOf( 'pddoco', 'pdlnid', 'comment' );
-	OpenOrderComment.validatesNumericalityOf( 'pddoco', { allowNull: false, message: 'PDDOCO ist nicht numerisch!' } );
-	OpenOrderComment.validatesNumericalityOf( 'pdlnid', { allowNull: false, message: 'PDLNID ist nicht numerisch' } );
-	OpenOrderComment.validatesLengthOf( 'pddoco', { is: 8, message: { is: 'ist nicht 8 Zeichen lang!' } } );
-*/
-
-	// model operation hook
-
 	OpenOrderComment.observe( 'before save', function ( ctx, next ) {
 
-		var lbctx = LoopBackContext.getCurrentContext();
-		var currentUser = lbctx && lbctx.get( 'currentUser' );
-		console.log("Current User: %O", currentUser);
+		//var lbctx = LoopBackContext.getCurrentContext();
+		var currentUser = ctx.options.currentUser.username;
+		console.log("Current User: '%O'", currentUser);
 		if ( debugOpenOrderComment ) console.log( 'About to save following insance:\n %O', ctx.instance );
 
 		// Null the fields if they are ''

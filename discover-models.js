@@ -8,7 +8,7 @@ const writeFile = promisify( fs.writeFile );
 const readFile = promisify( fs.readFile );
 const mkdirp = promisify( require( 'mkdirp' ) );
 
-const DATASOURCE_NAME = 'qcd480d06JDE';
+const DATASOURCE_NAME = 'LPCE480SQLPRODMISC';
 const dataSourceConfig = require( './server/datasources.json' );
 const db = new loopback.DataSource( dataSourceConfig[ DATASOURCE_NAME ] );
 
@@ -17,8 +17,8 @@ const db = new loopback.DataSource( dataSourceConfig[ DATASOURCE_NAME ] );
 
 var properties = [ {
 	name: 'table',
-	validator: /^[1-9a-zA-Z\s\-]+$/,
-	warning: 'table must be only letters, spaces, or dashes'
+	//validator: /^[1-9a-zA-Z\s\-]+$/,
+	//warning: 'table must be only letters, spaces, or dashes'
 } ];
 
 prompts.start();

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "\\\\qcd480w04\\www\\node\\develop\\lpce-webapps-server"
+		}
+	],
+	"settings": {
+		"editor.detectIndentation": false,
+		"editor.wrappingIndent": "indent"
+	}
+}

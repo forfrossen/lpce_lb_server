@@ -32,30 +32,6 @@
 			"encrypt": false
 		}
 	},
-	"qcd480d03JDE": {
-		"host": "qcd480d03",
-		"port": 1433,
-		"database": "JDE",
-		"password": "biuser",
-		"name": "qcd480d03JDE",
-		"connector": "mssql",
-		"user": "bi-user",
-		"options": {
-			"encrypt": false
-		}
-	},
-	"qcd480d06JDE": {
-		"host": "qcd480d06",
-		"port": 1433,
-		"database": "JDE",
-		"password": "biuser",
-		"name": "qcd480d06JDE",
-		"connector": "mssql",
-		"user": "bi-user",
-		"options": {
-			"encrypt": false
-		}
-	},
 	"LVS_PROD": {
 		"connector": "oracle",
 		"tns": "LVS",
@@ -84,11 +60,13 @@
 		"port": 389,
 		"user": "QCD480SAJB02@uk.parker.corp",
 		"password": "Le8x2mE",
+		"debug": true,
 		"modelMapping": {
 			"ADUser": {
 				"mapping":{
 					"login": "sAMAccountName",
 					"username": "sAMAccountName",
+					"primaryGroup": "primaryGroupID",
 					"memberOf": "memberOf",
 					"displayName": "displayName",
 					"email": "mail",

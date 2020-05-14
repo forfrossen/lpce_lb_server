@@ -3,6 +3,7 @@ var debug = require('debug')('loopback:routing');
 module.exports = function ( app ) {
 	
 	var router = app.loopback.Router();
+	//var accessToken = app.models.accessToken;
 	
 	/*
 	//
@@ -62,14 +63,16 @@ module.exports = function ( app ) {
 	router.get('/auth/negotiate', ( req, res, next ) => {
 		
 		//req.accessToken = req.query.accessToken || req.query.access_token || req.headers.authorization;
-		debug('!!!!!!===============> Hello from routing /auth/account <============ !!!!!!!!!!!');
-		/*
+		debug('!!!!!!===============> Hello from routing /auth/negotiate <============ !!!!!!!!!!!');
+		
 		debug("req.accessToken", req.accessToken);
+	/*
 		debug("req.access_token", req.access_token);
 		debug("req.signedCookies", req.signedCookies);
-		debug("req.user", req.user);
+	*/
+		debug("req.user.username", req.user.username);
 		//debug("req", req);
-		*/
+		
 		
 		var response = {};
 		//response.access_token = req.signedCookies.access_token;
@@ -100,5 +103,6 @@ module.exports = function ( app ) {
 		});
 		
 	});
+
 	app.use( router );
 };

@@ -1,0 +1,679 @@
+{
+	"name": "F4311",
+	"plural": "F4311",
+	"description": "Purchase Order Detail File",
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "vF4311"
+		},
+		"relations": {
+			"items": {
+				"type": "hasOne",
+				"model": "Item",
+				"foreignKey": "ibitm",
+				"primaryKey": "pditm"
+			},
+			"wo": {
+				"type": "hasOne",
+				"model": "F4801",
+				"foreignKey": "purchaseorderID",
+				"primaryKey": "workorderID"
+			}
+		}
+	},
+	"properties": {
+		"id": false,
+		"pddoco": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 8,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDDOCO",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 8,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pddcto": {
+			"type": "String",
+			"required": true,
+			"length": 2,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDDCTO",
+				"dataType": "varchar",
+				"dataLength": 2,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdoorn": {
+			"type": "String",
+			"required": true,
+			"length": 8,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDOORN",
+				"dataType": "varchar",
+				"dataLength": 8,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdocto": {
+			"type": "String",
+			"required": true,
+			"length": 2,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDOCTO",
+				"dataType": "varchar",
+				"dataLength": 2,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdogno": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDOGNO",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdlnid": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDLNID",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdmcu": {
+			"type": "String",
+			"required": true,
+			"length": 12,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDMCU",
+				"dataType": "varchar",
+				"dataLength": 12,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdan8": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 8,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDAN8",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 8,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pdan801": {
+			"type": "String",
+			"required": true,
+			"length": 40,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDAN801",
+				"dataType": "varchar",
+				"dataLength": 40,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pddrqj": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDDRQJ",
+				"dataType": "date",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdtrdj": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDTRDJ",
+				"dataType": "date",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdpddj": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDPDDJ",
+				"dataType": "date",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdaddj": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDADDJ",
+				"dataType": "date",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdcndj": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 6,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDCNDJ",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 6,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pdpefj": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 6,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDPEFJ",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 6,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pditm": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 8,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDITM",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 8,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pdlitm": {
+			"type": "String",
+			"required": true,
+			"length": 25,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDLITM",
+				"dataType": "varchar",
+				"dataLength": 25,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdlocn": {
+			"type": "String",
+			"required": true,
+			"length": 20,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDLOCN",
+				"dataType": "varchar",
+				"dataLength": 20,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdlnty": {
+			"type": "String",
+			"required": true,
+			"length": 2,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDLNTY",
+				"dataType": "varchar",
+				"dataLength": 2,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdnxtr": {
+			"type": "String",
+			"required": true,
+			"length": 3,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDNXTR",
+				"dataType": "varchar",
+				"dataLength": 3,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdlttr": {
+			"type": "String",
+			"required": true,
+			"length": 3,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDLTTR",
+				"dataType": "varchar",
+				"dataLength": 3,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pduom": {
+			"type": "String",
+			"required": true,
+			"length": 3,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDUOM",
+				"dataType": "varchar",
+				"dataLength": 3,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pduorg": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDUORG",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pduopn": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDUOPN",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdurec": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDUREC",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdprrc": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDPRRC",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdaexp": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDAEXP",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdanby": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 8,
+			"scale": 0,
+			"mssql": {
+				"columnName": "PDANBY",
+				"dataType": "decimal",
+				"dataLength": null,
+				"dataPrecision": 8,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"pdcrcd": {
+			"type": "String",
+			"required": true,
+			"length": 3,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDCRCD",
+				"dataType": "varchar",
+				"dataLength": 3,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdaopn": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDAOPN",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdarec": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDAREC",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdpdp4": {
+			"type": "String",
+			"required": true,
+			"length": 3,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDPDP4",
+				"dataType": "varchar",
+				"dataLength": 3,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdrorn": {
+			"type": "String",
+			"required": true,
+			"length": 8,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDRORN",
+				"dataType": "varchar",
+				"dataLength": 8,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdrcto": {
+			"type": "String",
+			"required": true,
+			"length": 2,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDRCTO",
+				"dataType": "varchar",
+				"dataLength": 2,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdrlln": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDRLLN",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdartg": {
+			"type": "String",
+			"required": true,
+			"length": 12,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDARTG",
+				"dataType": "varchar",
+				"dataLength": 12,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"pdcrmd": {
+			"type": "String",
+			"required": false,
+			"length": 1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDCRMD",
+				"dataType": "varchar",
+				"dataLength": 1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdtorg": {
+			"type": "String",
+			"required": false,
+			"length": 10,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDTORG",
+				"dataType": "varchar",
+				"dataLength": 10,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pduser": {
+			"type": "String",
+			"required": false,
+			"length": 10,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDUSER",
+				"dataType": "varchar",
+				"dataLength": 10,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pdtday": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "PDTDAY",
+				"dataType": "date",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"workorderID": {
+			"type": "String",
+			"required": false,
+			"length": 25,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "workorderID",
+				"dataType": "varchar",
+				"dataLength": 25,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}			
+		}
+		
+	},
+	"scope": {
+		"where": { "pdmcu": "        5839" },
+		"order": "PDDRQJ desc"
+	},
+	"scopes": {
+		"withItemDetails": {
+			"fields": [ "pddoco", "pddcto", "pdan8", "pdan801" ],
+			"include": [
+				{
+					"relation": "items",
+					"where": { "ibmcu": "        5839" }
+				}
+			]
+		},
+		"withRelatedWorkorder": {
+			"include": [
+				{
+				 	"relation": "wo",
+					"where": { 
+						"and": [
+							{ "wamcu": "        5839" },
+							{ "wlrorn": { "neq": ""  }}
+						]
+					}
+				}
+			],
+			"where": { 
+				"and": [
+					{ "pddcto": "OO" }
+				]
+			}
+		}
+	}
+		
+}

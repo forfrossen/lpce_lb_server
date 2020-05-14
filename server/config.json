@@ -1,6 +1,6 @@
 {
   "restApiRoot": "/api",
-  "host": "0.0.0.0",
+  "host": "lpce480webapps",
   "cookieSecret": "ts/Yx!cMhrFw~QwAX3$a#Xgx$*S7jR]A",
   "logoutSessionsOnSensitiveChanges": true,
   "remoting": {

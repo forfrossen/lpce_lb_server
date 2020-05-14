@@ -5,11 +5,33 @@
     "mssql": {
       "schema": "dbo",
       "table": "F4311OpenComment"
-    },
-    "relations": {}
+    },   
+	"relations": {
+		"CreatedByUser": {
+			"type": "hasOne",
+			"model": "ADUser",
+			"foreignKey": "username",
+			"primaryKey": "createdby"
+		}
+	}
   },
   "properties": {
 	"id": false,
+	"pddcto": {
+      "type": "String",
+      "required": false,
+      "length": 2,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "PDDCTO",
+        "dataType": "varchar",
+        "dataLength": 2,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
     "pddoco": {
       "type": "Number",
       "required": false,
@@ -88,17 +110,25 @@
     "createdby": {
       "type": "String",
       "required": false,
-      "length": 10,
+      "length": -1,
       "precision": null,
       "scale": null,
       "mssql": {
         "columnName": "createdBy",
-        "dataType": "nchar",
-        "dataLength": 10,
+        "dataType": "nvarchar",
+        "dataLength": -1,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "YES"
       }
     }
-  }
+  },
+	"scope": {
+		"include": [
+			{ 
+				"relation": "CreatedByUser",
+				"scope":  { "fields": ["displayName"] }
+			}
+		]
+	}
 }

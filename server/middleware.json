@@ -25,7 +25,7 @@
 		"helmet#hsts": {
 			"params": {
 				"maxAge": 0,
-				"includeSubdomains": true
+				"includeSubDomains": true
 			}
 		},
 		"helmet#hidePoweredBy": {},
@@ -40,7 +40,9 @@
 	"auth": {
 		"loopback#token": { 
 			"params": {
-                "currentUserLiteral": "me"
+				"model": "accessToken",
+                "currentUserLiteral": "me",
+				"headers": [ "authorization"]
             }
 		}
 	},
@@ -50,11 +52,6 @@
 			"paths": [
 				"${restApiRoot}"
 			]
-		}
-	},
-	"files": {
-		"loopback#static": {
-			"params": "$!../client/dist"
 		}
 	},
 	"files:after": {

@@ -1,0 +1,154 @@
+{
+	"name": "WebAppsMenu",
+	"options": {
+		"idInjection": false,
+		"mssql": {
+			"schema": "dbo",
+			"table": "WebAppsMenu"
+		},
+		"relations": {
+			"children": {
+				"type": "hasMany",
+				"model": "WebAppsMenu",
+				"primaryKey": "id",
+				"foreignKey": "parent"
+			}
+		}
+	},
+	"properties": {
+		"id": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"id": 1,
+			"mssql": {
+				"columnName": "id",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"title": {
+			"type": "String",
+			"required": true,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "title",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"link": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "link",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"group": {
+			"type": "Boolean",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "group",
+				"dataType": "bit",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"hidden": {
+			"type": "Boolean",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "hidden",
+				"dataType": "bit",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"icon": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "icon",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"pathMatch": {
+			"type": "String",
+			"required": false,
+			"length": -1,
+			"precision": null,
+			"scale": null,
+			"mssql": {
+				"columnName": "pathMatch",
+				"dataType": "nvarchar",
+				"dataLength": -1,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"parent": {
+			"type": "Number",
+			"required": false,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"mssql": {
+				"columnName": "parent",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	},
+	"scope": {
+		"order": "id asc"
+	},
+	"scopes": {
+		"withChildren": {
+			"where": {"parent": null },
+			"include": [
+				{
+					"relation": "children"
+				}				
+			]
+		}
+	}
+}

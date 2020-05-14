@@ -47,6 +47,7 @@
 						"displayName",
 						"email",
 						"memberOf",
+						"primaryGroup",
 						"*"
 					]
 				}
